@@ -181,6 +181,9 @@
                 </ul>
               </div>
             </div>
+            <?php 
+                  include 'login.php';
+              ?>
             <div class="col-md-3 col-md-push-1">
               <div class="probootstrap-footer-widget">
                 <h3>Links</h3>
@@ -190,6 +193,21 @@
                   <li><a href="#">Teachers</a></li>
                   <li><a href="#">News</a></li>
                   <li><a href="#">Contact</a></li>
+                  <?php if (isset($_SESSION["role"])){
+	     echo '<li><a href="logout.php">SIGN OUT</a></li>'; //Add logout.php
+			}else {
+			 echo '<li><a href="login.php">SIGN IN</a></li>';
+		}
+		?>
+							
+		<li><a href="#" class="as-button"><span class="btn btn-primary">SIGN
+										UP</span></a></li>
+	<li><a href ="checkout.php"><i class="fa fa-cart-plus" style="font-size: 20px"></i><?php if (isset($_SESSION["role"]))?></a></li>		
+	<?php
+	if (isset($_SESSION["role"])){
+	 echo '<li><a href="#">Welcome '.$_SESSION["firstname"].' '.$_SESSION["lastname"].'</a></li>';
+	}
+		?>	
                 </ul>
               </div>
             </div>
