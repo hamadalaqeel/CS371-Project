@@ -3,3 +3,19 @@
     position: relative; 
     right:50%;
 }
+
+  @media (max-width: 767px) /* @grid-float-breakpoint -1 */
+{
+    .navbar
+    {
+    position: fixed;
+    background-color: black;
+
+    }
+}
+
+ .navbar-default{
+  position: absolute;
+  top:193px;
+  background-color: black;
+  }
