@@ -1,1 +1,5 @@
 /* Your custom css code goes here */
+#LogoPic{
+    position: relative; 
+    right:50%;
+}

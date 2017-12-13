@@ -14,9 +14,9 @@ and open the template in the editor.
     <body>
         
         <?php
-include "include/dbconfig.php";
-session_start();
-?>
+            include "include/dbconfig.php";
+            session_start();
+          ?>
 
 <?php
 				
@@ -188,10 +188,5 @@ session_start();
     </div>
 </div>
 
-        <script>
-            $('#myModal').modal('show');
-            
-        </script>
-        
     </body>
 </html>

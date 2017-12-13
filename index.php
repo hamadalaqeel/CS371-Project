@@ -63,11 +63,11 @@
         <div class="container">
           
           <div class="col-md-6">
-    <h2>Our Mission:</h2>
+            <h2>Our Mission:</h2>
             <p>ACM, the Association for Computing Machinery ,is the world's largest educational and scientific society, uniting computing educators, researchers and professionals to inspire dialogue, share resources and address the field's challenges. ACM strengthens the profession's collective voice through strong leadership, promotion of the highest standards, and recognition of technical excellence. ACM supports the professional growth of its members by providing opportunities for life-long learning, career development, and professional networking.
             </p>
           </div>
-          <div class="col-md-6 col-md-push-1">
+          <div class="col-md-6">
            
              <h2>Our Objectives: </h2>
              <ul class="list-group">

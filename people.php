@@ -58,7 +58,7 @@
         	
           <div class="row col-md-12 col-sm-12">
           	<?php
-        	echo '<h3>'. (mysqli_fetch_assoc($result))['t_department'].'</h3>';
+        	echo "<h3>'.(mysqli_fetch_assoc($result))['t_department'].'</h3>";
         	?>
           </div>
 
