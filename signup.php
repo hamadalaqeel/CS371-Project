@@ -13,7 +13,7 @@ and open the template in the editor.
          <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/styles-merged.css">
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="CSS1//custom.css">
     <link rel="stylesheet" href="css/signup.css">
     <script src="js/signup.js"> 
     </head>

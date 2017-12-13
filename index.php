@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/styles-merged.css">
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="CSS1//custom.css">
 
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
@@ -22,7 +22,7 @@
       
       <!-- Fixed navbar -->
       <?php
-      include "navbar/navbar.php";
+      include "navbar.php";
       ?>
       <!-- About PSU Section-->
       <section class="probootstrap-section probootstrap-section-colored">
@@ -152,91 +152,14 @@
       </section>
       
      
-      <footer class="probootstrap-footer probootstrap-bg">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="probootstrap-footer-widget">
-                <h3>About The School</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro provident suscipit natus a cupiditate ab minus illum quaerat maxime inventore Ea consequatur consectetur hic provident dolor ab aliquam eveniet alias</p>
-                <h3>Social</h3>
-                <ul class="probootstrap-footer-social">
-                  <li><a href="#"><i class="icon-twitter"></i></a></li>
-                  <li><a href="#"><i class="icon-facebook"></i></a></li>
-                  <li><a href="#"><i class="icon-github"></i></a></li>
-                  <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                  <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                  <li><a href="#"><i class="icon-youtube"></i></a></li>
-                </ul>
-              </div>
-            </div>
-            <?php 
-                  include 'login.php';
-              ?>
-            <div class="col-md-3 col-md-push-1">
-              <div class="probootstrap-footer-widget">
-                <h3>Links</h3>
-                <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Teachers</a></li>
-                  <li><a href="#">News</a></li>
-                  <li><a href="#">Contact</a></li>
-                  <?php if (isset($_SESSION["role"])){
-	     echo '<li><a href="logout.php">SIGN OUT</a></li>'; //Add logout.php
-			}else {
-			 echo '<li><a href="login.php">SIGN IN</a></li>';
-		}
-		?>
-							
-		<li><a href="#" class="as-button"><span class="btn btn-primary">SIGN
-										UP</span></a></li>
-	<li><a href ="checkout.php"><i class="fa fa-cart-plus" style="font-size: 20px"></i><?php if (isset($_SESSION["role"]))?></a></li>		
-	<?php
-	if (isset($_SESSION["role"])){
-	 echo '<li><a href="#">Welcome '.$_SESSION["firstname"].' '.$_SESSION["lastname"].'</a></li>';
-	}
-		?>	
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="probootstrap-footer-widget">
-                <h3>Contact Info</h3>
-                <ul class="probootstrap-contact-info">
-                  <li><i class="icon-location2"></i> <span>198 West 21th Street, Suite 721 New York NY 10016</span></li>
-                  <li><i class="icon-mail"></i><span>info@domain.com</span></li>
-                  <li><i class="icon-phone2"></i><span>+123 456 7890</span></li>
-                </ul>
-              </div>
-            </div>
-           
-          </div>
-          <!-- END row -->
-          
-        </div>
-
-        <div class="probootstrap-copyright">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8 text-left">
-                <p>&copy; 2017 <a href="https://probootstrap.com/">ProBootstrap:Enlight</a>. All Rights Reserved. Designed &amp; Developed with <i class="icon icon-heart"></i> by <a href="https://probootstrap.com/">ProBootstrap.com</a></p>
-              </div>
-              <div class="col-md-4 probootstrap-back-to-top">
-                <p><a href="#" class="js-backtotop">Back to top <i class="icon-arrow-long-up"></i></a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-    </div>
-    <!-- END wrapper -->
     
 
-    <script src="js/scripts.min.js"></script>
-    <script src="js/main.min.js"></script>
-    <script src="js/custom.js"></script>
+    <!-- END wrapper -->
+    
+<?php
+    include 'footer.php';
+
+?>
 
   </body>
 </html>
