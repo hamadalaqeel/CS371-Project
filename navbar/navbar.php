@@ -57,33 +57,28 @@
           <a  href="index.html" > 
               <img id="LogoPic" alt="ACL Chapter Logo" src="img/ACMChapterLogo.png"> </a>
           
-<nav class="navbar navbar-default navbar-inverse navbar-stick" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">ACM</a>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
     
-        <ul class="nav navbar-nav navbar-right">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+     <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="index.php">ACM</a>
+
+            <button type="button" style="float:left;"class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+    </div>
+    <div style="background-color: #f2f2f2;"class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="news.php">News</a></li>
+            <li><a href="events.php">Events</a></li>
+            <li><a href="conferences.php">Conferences</a></li>
+      </ul>
+       <ul class="nav navbar-nav navbar-right">
             <li><p class="navbar-text">Already have an account?</p></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
@@ -125,11 +120,15 @@
                 </ul>
             </li>
         </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+        
+    </div>
+
+  </div>
 </nav>
+    
+    
+  </div><!-- /.container-fluid -->
     <!-- END wrapper -->
-        </div>
 
 
     <script src="js/scripts.min.js"></script>
