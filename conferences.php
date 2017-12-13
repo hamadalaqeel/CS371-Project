@@ -20,7 +20,7 @@
   </head>
   <body>
 <?php
-      include "navbar.html";
+      include "navbar/navbar.php";
       ?>
       <!--
       DETAILS OF A CONFERENCE:

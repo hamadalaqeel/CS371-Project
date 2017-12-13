@@ -27,6 +27,9 @@
   </head>
   <body>
 
+      <?php
+      include 'navbar/navbar.php';
+      ?>
     <div class="probootstrap-search" id="probootstrap-search">
       <a href="#" class="probootstrap-close js-probootstrap-close"><i class="icon-cross"></i></a>
       <form action="#">
