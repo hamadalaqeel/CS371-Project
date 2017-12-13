@@ -22,7 +22,7 @@
       
       <!-- Fixed navbar -->
       <?php
-      include "navbar.html";
+      include "navbar/navbar.php";
       ?>
       <!-- About PSU Section-->
       <section class="probootstrap-section probootstrap-section-colored">
