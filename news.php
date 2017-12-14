@@ -62,7 +62,7 @@
                     <span class="probootstrap-date"><i class="icon-calendar"></i><?php echo $row["date"]; ?></span>
                  <!--   <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span> -->
                   </p>
-                  <p><a href="#" class="btn btn-primary">Learn More</a></p>
+                  <p><a href="#" class="btn btn-info">Learn More</a></p>
                 </div>
                 <div class="probootstrap-image probootstrap-animate" style="background-image: url(<?php echo $row["pic1"];?>)">
                 <!--  <a href="https://vimeo.com/45830194" class="btn-video popup-vimeo"><i class="icon-play3"></i></a>
@@ -90,6 +90,7 @@
            <h3> <?php echo $row["title"];?> </h3>
            <p><?php echo $row["short_desc"];?></p>
            <span class="probootstrap-date"><i class="icon-calendar"></i><?php echo $row["date"];?></span>
+           
                 <!--  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span> -->
                 </div>
               </a>
@@ -104,8 +105,7 @@
           
                         echo '</div>';
                         echo '</div>';
-                        echo '</div>';
-                        echo '<section class="probootstrap-section">';
+  
                         echo '<div class="container">';   
                         echo '<div class="row">';     
                  
