@@ -59,7 +59,7 @@
 
       <!-- Mession and Objectives -->
       
-      <section class="probootstrap-section">
+      <section  class="probootstrap-section">
         <div class="container">
           
           <div class="col-md-6">

@@ -5,4 +5,17 @@
        border-radius: 0px;
         
    }
-  
+   #logoPic2{
+        float: right;
+        height: 150px;
+        width:  150px;
+
+   }
+   #loopImg{
+       height: 200px;
+        width: 150; 
+   }
+   .btn btn-primary{
+ 
+       background-color: #0099CC;
+   }

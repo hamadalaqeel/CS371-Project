@@ -19,9 +19,15 @@
     <![endif]-->
   </head>
   <body>
- <?php
-      include "navbar/navbar.php";
+      <!-- The NAVBAR -->
+      <?php
+      include 'navbar.php';
       ?>
+     <script>
+      //MAKING THE CURRENT PAGE ELEMENT ACTIVE IN THE NAVBAR
+      document.getElementById("people").classList.add("active");
+     </script>
+      <!-- End of NAVBAR -->
             
       <section class="probootstrap-section probootstrap-section-colored" >
         <div class="container" class="bg-info text-white" >

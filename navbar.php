@@ -51,11 +51,17 @@
                 <li><a href="#" class="probootstrap-search-icon js-probootstrap-search"><i class="icon-search"></i></a></li>
               </ul>
             </div>
+              
           </div>
-        </div>
+            <!-- LOGOS -->
+          <a  href="index.php" > 
+          <img id="logoPic" alt="ACL Chapter Logo" src="img/ACMChapterLogo.png" > </a>
+         
+         <img id="logoPic2"alt="ACL Chapter Logo" src="img/PSUlogo2.png"> </a>
+     
+     </div>
       </div>
-          <a  href="index.html" > 
-          <img id="LogoPic" alt="ACL Chapter Logo" src="img/ACMChapterLogo.png"> </a>
+         
          
           
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -70,14 +76,19 @@
       <a class="navbar-brand" href="index.php">ACM</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
+      
+        <!-- NAVBAR LIST ELEMENTS -->
       <ul class="nav navbar-nav">
-       
-      <li class="active"><a href="news.php">News</a></li>
-            <li><a href="events.php">Events</a></li>
-            <li><a href="conferences.php">Conferences</a></li>
+           
+            <li id="news"  >        <a  href="news.php">        News       </a>        </li>
+            <li id="conferences">   <a  href="conferences.php"> Conferences</a>        </li>
+            <li id="people">        <a  href="people.php">      People     </a>        </li>
+            <li id="contact">          <a  href="Contact.php">     Contact Us!</a>        </li>
+              
       </ul>
+        <!-- NAVBAR LOGNI  AND SIGN UP Section-->
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
@@ -88,10 +99,9 @@
   <!-- /.container-fluid -->
     <!-- END wrapper -->
 
-
     <script src="js/scripts.min.js"></script>
     <script src="js/main.min.js"></script>
     <script src="js/custom.js"></script>
-  
+
   </body>
 </html>
