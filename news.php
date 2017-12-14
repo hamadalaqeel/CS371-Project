@@ -62,7 +62,9 @@
                     <span class="probootstrap-date"><i class="icon-calendar"></i><?php echo $row["date"]; ?></span>
                  <!--   <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span> -->
                   </p>
-                  <p><a href="#" class="btn btn-info">Learn More</a></p>
+                   <?php
+                    $feed = 'title='.$row['title'];?>
+                  <p><a href="news_single.php?<?PHP echo $feed;?>" class="btn btn-info">Learn More</a></p>
                 </div>
                 <div class="probootstrap-image probootstrap-animate" style="background-image: url(<?php echo $row["pic1"];?>)">
                 <!--  <a href="https://vimeo.com/45830194" class="btn-video popup-vimeo"><i class="icon-play3"></i></a>
@@ -84,7 +86,9 @@
             ?>
        
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-           <a href="#" class="probootstrap-featured-news-box">
+                 <?php
+                    $feed = 'title='.$row['title'];?>
+           <a href="news_single.php?<?PHP echo $feed;?>" class="probootstrap-featured-news-box">
            <figure class="probootstrap-media"><img id="loopImg"src="<?php echo $row["pic1"];?>" alt="ConferencePic" class="img-responsive"></figure>
            <div class="probootstrap-text">
            <h3> <?php echo $row["title"];?> </h3>
@@ -96,10 +100,11 @@
               </a>
             </div>
            
-        <div class="clearfix visible-sm-block visible-xs-block"></div>
-        <div class="clearfix visible-md-block"></div>
+ 
           
-  <?php           
+  <?php      
+  //       <div class="clearfix visible-sm-block visible-xs-block"></div>
+ //      <div class="clearfix visible-md-block"></div>
          $count++;
          if($count%3==0){
           
