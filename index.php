@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="CSS1//custom.css">
 
+
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
@@ -160,6 +161,10 @@
     include 'footer.php';
 
 ?>
+    
 
+    <script src="js/scripts.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script src="js/custom.js"></script>
   </body>
 </html>
