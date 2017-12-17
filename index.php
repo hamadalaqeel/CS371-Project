@@ -163,8 +163,8 @@
 ?>
     
 
-    <script src="js/scripts.min.js"></script>
-    <script src="js/main.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="../CS371-Project/js/scripts.min.js"></script>
+    <script src="../CS371-Project/js/main.min.js"></script>
+    <script src="../CS371-Project/js/custom.js"></script>
   </body>
 </html>

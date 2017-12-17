@@ -5,7 +5,10 @@
         <title>Sign up for ACM</title>        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link type="text/css" rel="stylesheet" href="../CS371-Project/CSS1/custom.css">
-        
+
+        <script src="signup.js"></script>
+        <script src="emailValidation.js"></script>
+
 
     </head>
 
@@ -22,10 +25,10 @@
 
                         <p class="form-title" id="FT">
                             Sign Up</p>
-                        <form class="login" id="SUF">
+                        <form class="login" id="SUF" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
                             <div class="form-group">
-                                <input id="email" name="email"  type="text" data-validation="required" placeholder="Email" >
+                                <input id="email" name="email"  type="text" data-validation="required" placeholder="Email" onchange="getEmailresult()">
                                 <span id="error_email" class="text-danger"></span>
                             </div> 
                             <div class="form-group">
@@ -44,8 +47,8 @@
                                 <select value="Role" class="selectpicker" name="role" id="role" class="form-control" required>
                                     <option value="0">Role</option>
                                     <option value="admin">Admin</option>
-                                    <option value="student">Student</option>
-                                    <option value="Role">Role</option>
+                                    <option value="director">Director</option>
+                                    <option value="member">Member</option>
                                 </select>
                                 <span id="error_role" class="text-danger"></span>
                             </div>
@@ -110,14 +113,41 @@
             </div>
         </div>
 
-
         <?php
-        include 'footer.php';
-        ?>
+
+        function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+
+        if (isset($_POST["email"]) == true) {
+            $email = test_input($_POST["email"]);
+            $password = test_input($_POST["password"]);
+            $firstname = test_input($_POST["myName"]);
+            $lastname = test_input($_POST["lastname"]);
+            $role = test_input($_POST["role"]);
+            $dob = test_input($_POST["dob"]);
+            $joindate = test_input(date("Y/m/d"));
+            $address = test_input($_POST["address"]);
+            $phone = test_input($_POST["phone"]);
+            $country = test_input($_POST["country"]);
+            $city = test_input($_POST["city"]);
+            $presonalHomepage = test_input($_POST["presonalHomepage"]);
+
+
+            $sql = "INSERT INTO users (email,password,first_name,last_name,role, birth_date,join_date,address,mobile,city,counrty,personal_home_page) VALUES ('$email','$password','$firstname','$lastname','$role','$dob','$joindate','$address',$phone,'$country','$city','$presonalHomepage');";
+            $result = $conn->query($sql);
+        }            
+            ?>
+
+            <?php
+            include 'footer.php';
+            ?>
         <script src="js/scripts.min.js"></script>
         <script src="js/main.min.js"></script>
         <script src="js/custom.js"></script>
-        <script src="../CS371-Project/js/signup.js"></script>
 
 
     </body>

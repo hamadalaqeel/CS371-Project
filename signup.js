@@ -17,17 +17,21 @@ $(document).ready(function () {
             $("#error_email").text("");
 
         }
-    });
-    $("#password").focusout(function () {
+    
+    }
+      );
+      
+     $("#password").focusout(function () {
         if ($(this).val() === '') {
             $(this).css("border-color", "#FF0000");
             $('#submit').attr('disabled', true);
-            $("#error_password").text("* You have to enter a password!");
-        } else if ($(this).val().length <= 10) {
+            $("#error_password").text("* You have to enter your password!");
+        } else if($(this).val().length < 10){
             $(this).css("border-color", "#FF0000");
             $('#submit').attr('disabled', true);
-            $("#error_password").text("* Password must be more than 10!");
-        } else
+            $("#error_password").text("* Password must have 10 index or higher!");
+        }
+        else
         {
             $(this).css("border-color", "#2eb82e");
             $('#submit').attr('disabled', false);
@@ -158,3 +162,4 @@ $(document).ready(function () {
     });
     
 });
+

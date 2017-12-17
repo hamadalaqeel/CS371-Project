@@ -107,7 +107,7 @@ input[type=text], select {
         background-color: inherit;
         border-top:0 none;
     }
-   
+
 }
 .btn-info{
     background-color: #0099CC;
@@ -333,4 +333,18 @@ form.login a:hover
 }
 #SUF span{
     font-size: 0.85em;
+}
+#WelcomeMessage{
+    position: relative;
+    top: 15px;
+
+}
+#Wm{
+    color:#0099CC
+}
+#ButtSO{
+}
+#ButtonSO{
+    background-color: #0099CC;
+    width: 110px;
 }
