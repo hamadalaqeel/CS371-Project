@@ -15,6 +15,24 @@
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+		function showEdit(editableObj) {
+			$(editableObj).css("background","#FFF");
+		} 
+		
+		function saveToDatabase(editableObj,column,email) {
+			$(editableObj).css("background","#FFF url(img/loaderIcon.gif) no-repeat right");
+			$.ajax({
+				url: "update_users.php",
+				type: "POST",
+				data:'column='+column+'&editval='+editableObj.innerHTML+'&email='+email,
+				success: function(data){
+					$(editableObj).css("background","#EFF0F4");
+				}        
+		   });
+		}
+		</script>
   </head>
   <body>
  
@@ -22,6 +40,9 @@
       
       //The NAVBAR 
       include 'navbar.php';
+   //   $column ='email';
+  //    $email ='mmm@mmm.com';
+ //     $editval ='newemail.com';        
 
 // connect to the database
 
@@ -53,14 +74,11 @@
 echo "<div class='container'>";
 echo '<br>';
 echo "<h3 style='text-align:center'>Registered Users:</h3>";  
-echo'<p><a href="news_single.php?<?PHP echo $feed;?>" class="btn btn-info pull-right" '
-. ' align="middle">Add User</a></p>';
 echo "<table class='table table-bordered'>";
 
 
 //MetaData
-echo "<br>";
-echo "<br>";
+
 echo "<tr> "
 . "<th>Email</th>"
 . "<th>Password</th>"
@@ -72,7 +90,10 @@ echo "<tr> "
 . "<th>Mobile</th>"
 . "<th>City</th>"
 . "<th>Country</th>"             
-. "<th>Personal Home Page</th> <th></th> <th></th></tr>";
+. "<th>Personal Home Page</th>"
+. "<th></th>"
+. "<th> <a href='signup.php' class='btn btn-primary'> Add </a> </th>"
+."</tr>";
 
 
 
@@ -83,20 +104,37 @@ while($row =  $result->fetch_assoc()) {
 
 
 // Echo out the contents of each row into a table
+    //Echo The information of each user.
 
-echo "<tr>";
-//Echo The information of each user.
-echo '<td>' . $row['email'] . '</td>';
-echo '<td>' . $row['password'] . '</td>';
-echo '<td>' . $row['first_name'] . '</td>';
-echo '<td>' . $row['last_name'] . '</td>';
-echo '<td>' . $row['role'] . '</td>';
-echo '<td>' . $row['birth_date'] . '</td>';
-echo '<td>' . $row['address'] . '</td>';
-echo '<td>' . $row['mobile'] . '</td>';
-echo '<td>' . $row['city'] . '</td>';
-echo '<td>' . $row['counrty'] . '</td>';
-echo '<td>' . $row['personal_home_page'] . '</td>';
+?>
+<tr>
+
+<td contenteditable="true" onBlur="saveToDatabase(this,'email','<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["email"]; ?></td>
+<td contenteditable="true" onBlur="saveToDatabase(this,'password','<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["password"]; ?></td>
+<td contenteditable="true" onBlur="saveToDatabase(this,'first_name','<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["first_name"]; ?></td>
+<td contenteditable="true" onBlur="saveToDatabase(this,'last_name','<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["last_name"]; ?></td>
+<td contenteditable="true" onBlur="saveToDatabase(this,'role','<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["role"]; ?></td>
+<td contenteditable="true" onBlur="saveToDatabase(this,'birth_date','<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["birth_date"]; ?></td>
+<td contenteditable="true" onBlur="saveToDatabase(this,'address','<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["address"]; ?></td>
+<td contenteditable="true" onBlur="saveToDatabase(this,'mobile','<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["mobile"]; ?></td>
+<td contenteditable="true" onBlur="saveToDatabase(this,'city','<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["city"]; ?></td>
+<td contenteditable="true" onBlur="saveToDatabase(this,'counrty','<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["counrty"]; ?></td>
+<td contenteditable="true" onBlur="saveToDatabase(this,'personal_home_page','<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["personal_home_page"]; ?></td>
+
+
+<!--
+
+<td>' . $row['password'] . '</td>';
+<td>' . $row['first_name'] . '</td>';
+<td>' . $row['last_name'] . '</td>';
+<td>' . $row['role'] . '</td>';
+<td>' . $row['birth_date'] . '</td>';
+<td>' . $row['address'] . '</td>';
+<td>' . $row['mobile'] . '</td>';
+<td>' . $row['city'] . '</td>';
+<td>' . $row['counrty'] . '</td>';
+<td>' . $row['personal_home_page'] . '</td>'; -->
+<?php
     
 //$email = $row[email];
 //$sql= "DELETE * FROM users WHERE $email=row[email]";
@@ -105,7 +143,7 @@ echo '<td>' . $row['personal_home_page'] . '</td>';
 $email = 'email='.$row['email'];
 ?>
 
-<td><a href="update_users.php?id=<?php echo $row['person_id']; ?>">Edit</a></td>
+
 <td><a href="delete_users.php?<?PHP echo $email;?>" class="btn btn-danger">Delete</a></td>
 
 <?php
