@@ -40,6 +40,7 @@
       
       //The NAVBAR 
       include 'navbar.php';
+      
    //   $column ='email';
   //    $email ='mmm@mmm.com';
  //     $editval ='newemail.com';        
@@ -107,6 +108,10 @@ while($row =  $result->fetch_assoc()) {
     //Echo The information of each user.
 
 ?>
+       <script>
+      //MAKING THE CURRENT PAGE ELEMENT ACTIVE IN THE NAVBAR
+      document.getElementById("users").classList.add("active");
+     </script>
 <tr>
 
 <td contenteditable="true" onBlur="saveToDatabase(this,'email','<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["email"]; ?></td>

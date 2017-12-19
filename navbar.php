@@ -126,6 +126,7 @@
                         <li id="conferences">   <a  href="conferences.php"> Conferences</a>        </li>
                         <li id="people">        <a  href="people.php">      People     </a>        </li>
                         <li id="contact">          <a  href="Contact.php">     Contact us</a>        </li>
+                        <li id="users">          <a  href="users.php">     Users</a>        </li>
 
                     </ul>
                     <!-- NAVBAR LOGNI  AND SIGN UP Section-->
