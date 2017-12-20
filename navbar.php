@@ -126,8 +126,15 @@
                         <li id="conferences">   <a  href="conferences.php"> Conferences</a>        </li>
                         <li id="people">        <a  href="people.php">      People     </a>        </li>
                         <li id="contact">          <a  href="Contact.php">     Contact us</a>        </li>
-                        <li id="users">          <a  href="users.php">     Users</a>        </li>
+                        <?php
+                        if (isset($_SESSION["email"])) {
 
+                        $role = $_SESSION["role"];
+                        if($role =="admin"){
+                            echo "<li id=\"users\">  <a  href=\"users.php\">   Users</a>   </li>\n";
+                        }
+                        }
+?>
                     </ul>
                     <!-- NAVBAR LOGNI  AND SIGN UP Section-->
                     <ul class="nav navbar-nav navbar-right">
