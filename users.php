@@ -36,7 +36,6 @@
 
 
 
-
 // Display data in table.
 
         /* A user has:
@@ -52,18 +51,23 @@
          * 10- City 
          * 11- Personal home page
          */
+
+        echo "<div class='container-fliud'>";
+        echo "<div id='alerts'>";
+        echo "</div>";
+        echo "</div>";
         echo "<div class='container'>";
         echo "<div class='row'>";
         echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>";
         echo '<br>';
         echo "<h3 style='text-align:center'>Registered Users:</h3>";
+        echo "<button id='saveButton' class='btn btn-warning' onclick='addRowRequest()'>Save user</button>";
+        echo"<span id='adding_error'></span>";
         echo '<div class="table-responsive">';
         echo "<table id='myTable' class='table table-striped table-bordered table-hover table-condensed table-responsive'>";
 
 //. "<th> <a href='signup.php' class='btn btn-primary'> Add </a> </th>"
 //MetaData
-        echo "<button class='btn btn-warning' onclick='addRowRequest()'>Save user</button>";
-
         echo '<thead>';
         echo "<tr> "
         . "<th>Email</th>"
@@ -138,11 +142,11 @@
 //$email = $row[email];
 //$sql= "DELETE * FROM users WHERE $email=row[email]";
 //The ability to delete and modifiy each user.
-        $email = 'email=' . $row['email'];
+        $email = $row['email'];
         ?>
 
 
-        <td><a href="delete_users.php?<?PHP echo $email; ?>" class="btn btn-danger">Delete</a></td>
+        <td><button id="deleteButton" onclick="deleteAlert('<?PHP echo $email; ?>', this)"  class="btn btn-danger">Delete User</button></td>
 
         <?php
         echo "</tr>";
@@ -170,12 +174,7 @@
     <!-- END wrapper -->
 
 
-    <script src="js/scripts.min.js"></script>
-    <script src="js/main.min.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 
-    <script src="../CS371-Project/addUser.js"></script>
 
     <script>
         function showEdit(editableObj) {
@@ -190,6 +189,7 @@
                 data: 'column=' + column + '&editval=' + editableObj.innerHTML + '&email=' + email,
                 success: function (data) {
                     $(editableObj).css("background", "#EFF0F4");
+                    $(editableObj).css("border", "3px solid lightgreen");
                 }
             });
         }
@@ -202,9 +202,34 @@
             var row = table.insertRow(rowCount);
             row.innerHTML = "<td><input type='email' id='email' placeholder='Email'></input></td><td><input type='password' id='password' placeholder='password'></input></td><td><input type='text' id='firstname' placeholder='firstname'></input></td><td><input type='text' id='lastname' placeholder='lastname'></input></td><td><select class='form-control' id='role' name='role'><option disable> Select a role ...</option><option value='admin'> admin </option><option value='director'>director</option><option value='member'> member</option></select></td><td><input type='date' id='birthdate' ></input></td><td><input type='text' id='address' placeholder='address'></input></td><td><input type='text' id='mobile' placeholder='mobile'></input></td><td><input type='text' id='city' placeholder='city'></input></td><td><input type='text' id='country' placeholder='country'></input></td><td><input type='text' id='personalhomepage' placeholder='Personal homepage'></input></td>";
             row.style.fontSize = "0.58em";
+        }
+
+    </script>
+    <script>
+
+        function deleteAlert(email, r) {
+            $(document).ready(function () {
+                $(this).click(function () {
+                    $(this).load("delete_users.php?email=" + email);
+                });
+
+                document.getElementById("alerts").innerHTML += "<div class=\"alert alert-danger alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + email + " successfully removed!</strong></div>";
+                var i = r.parentNode.parentNode.rowIndex;
+                document.getElementById("myTable").deleteRow(i);
+
+            });
 
         }
+
+
     </script>
+
+    <script src="js/scripts.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script src="../CS371-Project/addUser.js"></script>
 
 </body>
 
