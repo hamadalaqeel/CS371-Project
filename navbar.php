@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
         <link rel="stylesheet" href="../CS371-Project/css/styles-merged.css">
         <link rel="stylesheet" href="../CS371-Project/css/style.min.css">
-        <link type="text/css" rel="stylesheet" href="CSS1/custom.css">
+        <link type="text/css" rel="stylesheet" href="../CS371-Project/custom.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
@@ -98,15 +98,14 @@
                 $_SESSION["firstname"] = $row["first_name"];
                 $_SESSION["lastname"] = $row["last_name"];
                 $_SESSION["role"] = $row["role"];
-
-            } else{
-                    echo "<script type='text/javascript' src='../CS371-Project/js/loginValidation.js'></script>";
+            } else {
+                echo "<script type='text/javascript' src='../CS371-Project/js/loginValidation.js'></script>";
             }
         }
         ?>
-       
-        <!-- <script>$(document).ready(function () { $("#error_emailPassword").alert("* You have to enter your email!");} });</script>
-        Collect the nav links, forms, and other content for toggling -->
+
+ <!-- <script>$(document).ready(function () { $("#error_emailPassword").alert("* You have to enter your email!");} });</script>
+ Collect the nav links, forms, and other content for toggling -->
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -129,20 +128,20 @@
                         <?php
                         if (isset($_SESSION["email"])) {
 
-                        $role = $_SESSION["role"];
-                        if($role =="admin"){
-                            echo "<li id=\"users\">  <a  href=\"users.php\">   Users</a>   </li>\n";
+                            $role = $_SESSION["role"];
+                            if ($role == "admin") {
+                                echo "<li id=\"users\">  <a  href=\"users.php\">   Users</a>   </li>";
+                                echo "<li id=\"news\" >  <a  href=\"add_news.php\">  Edit news</a>   </li>";
+                            }
                         }
-                        }
-?>
+                        ?>
                     </ul>
                     <!-- NAVBAR LOGNI  AND SIGN UP Section-->
                     <ul class="nav navbar-nav navbar-right">
 <?php
 if (isset($_SESSION["email"])) {
-    echo '<li id="WelcomeMessage"><span>Welcome <b id="Wm"><u>'.$_SESSION["firstname"].'.</b></u></span></li>';
-     echo '<li id="ButtSO"><a href="logout.php"><button id="ButtonSO" type="button" class="btn btn-success" href="logout.php">Sign out</button></a></li>';
-
+    echo '<li id="WelcomeMessage"><span>Welcome <b id="Wm"><u>' . $_SESSION["firstname"] . '.</b></u></span></li>';
+    echo '<li id="ButtSO"><a href="logout.php"><button id="ButtonSO" type="button" class="btn btn-success" href="logout.php">Sign out</button></a></li>';
 } else {
     echo "  <li><a href=\"signup.php\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\n";
     echo "         \n";
@@ -153,7 +152,7 @@ if (isset($_SESSION["email"])) {
     echo "                      <div class=\"row\">\n";
     echo "                          <div class=\"col-md-12\">\n";
     echo "                              Login:\n";
-    echo "                              <form class=\"form\" role=\"form\" method=\"post\" action=\"".$_SERVER["PHP_SELF"]. "\" accept-charset=\"UTF-8\" id=\"login-nav\">\n";
+    echo "                              <form class=\"form\" role=\"form\" method=\"post\" action=\"" . $_SERVER["PHP_SELF"] . "\" accept-charset=\"UTF-8\" id=\"login-nav\">\n";
     echo "                                  <div class=\"form-group\">\n";
     echo "                                      <label class=\"sr-only\" for=\"exampleInputEmail2\">Email address</label>\n";
     echo "                                      <input type=\"email\" name=\"email\" class=\"form-control\" id=\"exampleInputEmail2\" placeholder=\"Email address\" required>\n";
@@ -186,11 +185,11 @@ if (isset($_SESSION["email"])) {
 
 
                     </ul>
-                  
+
                 </div>
             </div>
         </nav>
-                    
+
         <!-- /.container-fluid -->
         <!-- END wrapper -->
 
