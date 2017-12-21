@@ -106,7 +106,7 @@
 
  <!-- <script>$(document).ready(function () { $("#error_emailPassword").alert("* You have to enter your email!");} });</script>
  Collect the nav links, forms, and other content for toggling -->
-        <nav class="navbar navbar-inverse">
+        <nav id="Nav" class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -131,7 +131,7 @@
                             $role = $_SESSION["role"];
                             if ($role == "admin") {
                                 echo "<li id=\"users\">  <a  href=\"users.php\">   Users</a>   </li>";
-                                echo "<li id=\"news\" >  <a  href=\"add_news.php\">  Edit news</a>   </li>";
+                                echo "<li id=\"edit_news\" >  <a  href=\"add_news.php\">  Edit news</a>   </li>";
                             }
                         }
                         ?>

@@ -3,7 +3,7 @@
     position: relative;
     top: 20px;
     border-radius: 0px;
-
+    
 }
 #logoPicLeft{
     float: left;
@@ -47,17 +47,17 @@
 }
 input[type=text], select {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 1.4em;
+    
 }
 
 
 #login-dp{
-    min-width: 250px;
+    min-width: 350px;
     padding: 14px 14px 0;
     overflow:hidden;
     background-color:rgba(255,255,255,.8);
@@ -132,7 +132,6 @@ p.form-title
 
 form
 {
-    width: 250px;
     margin: 0 auto;
 }
 
@@ -145,7 +144,7 @@ form.login input[type="text"], form.login input[type="password"]
     border: 0;
     border-bottom: 1px solid #FFFFFF;
     outline: 0;
-    font-size: 13px;
+    font-size: 1.4em;
     font-weight: 400;
     letter-spacing: 1px;
     margin-bottom: 5px;
@@ -277,6 +276,9 @@ form.login a:hover
 }
 
 #SUF input[type="submit"]{
+    position: relative;
+    left: 37%;
+    width: 30%;
     color:white;
 }
 #RF{
@@ -287,21 +289,29 @@ form.login a:hover
     bottom: 1%;
     right:4%;
 }
-
 #FT{
+    border-radius: 10px; 
+    padding: 5px;
+    padding-bottom: 30px;
+    color: black;
+    border-bottom: 3px solid grey;
+    font-size: 2.5em;
+    width:100%;
+}
+#FG{
+    position: relative;
+    right:150%;
     border-radius: 10px; 
     padding: 5px;
     padding-bottom: 30px;
     color:black;
     border-bottom: 3px solid white;
-    font-size: 1.8em;
-
-
+    font-size: 1em;
+    width:400%;
 }
 #dateOfbirth{
     position: relative;
-    left:2%;
-    font-size: 0.8em;
+    font-size: 1.4em;
     color:black;
 }
 #dateOfbirthDiv{
@@ -347,4 +357,8 @@ form.login a:hover
 #ButtonSO{
     background-color: #0099CC;
     width: 110px;
+}
+#myTable{
+    color: black;
+    
 }

@@ -43,12 +43,17 @@ function EmailresultCallback() {
             var xmlResponse = xmlHttp.responseXML;           
             
             var emailResult = xmlResponse.getElementsByTagName("message")[0].childNodes[0].nodeValue;
-          
+            var code = xmlResponse.getElementsByTagName("code")[0].childNodes[0].nodeValue;
+
             var result = document.getElementById("error_email");
             result.innerHTML = emailResult;
             result.style.color = "#0099CC";
             
-           
+         var email = document.getElementById("email");
+            
+           if(code == '1'){
+               email.style.borderBottom = "2px solid red";
+           }
 
         }
     }

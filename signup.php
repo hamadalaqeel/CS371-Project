@@ -1,14 +1,9 @@
 
 <html>
     <head>
-
         <title>Sign up for ACM</title>        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link type="text/css" rel="stylesheet" href="../CS371-Project/CSS1/custom.css">
-
-        <script src="signup.js"></script>
-        <script src="emailValidation.js"></script>
-
+        <link type="text/css" rel="stylesheet" href="../CS371-Project/custom.css">
 
     </head>
 
@@ -21,7 +16,7 @@
         <div class="signUpForm">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
                         <p class="form-title" id="FT">
                             Sign Up</p>
@@ -31,6 +26,7 @@
                                 <input id="email" name="email"  type="text" data-validation="required" placeholder="Email" onchange="getEmailresult()">
                                 <span id="error_email" class="text-danger"></span>
                             </div> 
+
                             <div class="form-group">
                                 <input id="password" name="password"  type="password" data-validation="required" placeholder="Password">
                                 <span id="error_password" class="text-danger"></span>
@@ -100,9 +96,7 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 forgot-pass-content">
-                                        <a id="RF" href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
-                                    </div>
+
                                 </div>
                             </div>
                         </form>
@@ -139,15 +133,18 @@
 
             $sql = "INSERT INTO users (email,password,first_name,last_name,role, birth_date,join_date,address,mobile,city,counrty,personal_home_page) VALUES ('$email','$password','$firstname','$lastname','$role','$dob','$joindate','$address',$phone,'$country','$city','$presonalHomepage');";
             $result = $conn->query($sql);
-        }            
-            ?>
+        }
+        ?>
 
-            <?php
-            include 'footer.php';
-            ?>
+        <?php
+        include 'footer.php';
+        ?>
         <script src="js/scripts.min.js"></script>
         <script src="js/main.min.js"></script>
         <script src="js/custom.js"></script>
+        <script src="signup.js"></script>
+        <script src="emailValidation.js"></script>
+
 
 
     </body>

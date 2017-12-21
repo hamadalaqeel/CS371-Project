@@ -81,7 +81,7 @@
         . "<th>City</th>"
         . "<th>Country</th>"
         . "<th>Personal Home Page</th>"
-        . "<th><button class='btn btn-primary' onclick='createRow()'>Add User</button> </th>"
+        . "<th><button id='addUser'class='btn btn-primary' onclick='createRow()'>Add User</button> </th>"
         . "</tr>"
         . "</thead>";
 
@@ -197,7 +197,10 @@
 
     <script>
         function createRow() {
-            var table = document.getElementById("myTable");
+        $('#addUser').attr('disabled', true);
+    
+            
+        var table = document.getElementById("myTable");
             var rowCount = table.rows.length;
             var row = table.insertRow(rowCount);
             row.innerHTML = "<td><input type='email' id='email' placeholder='Email'></input></td><td><input type='password' id='password' placeholder='password'></input></td><td><input type='text' id='firstname' placeholder='firstname'></input></td><td><input type='text' id='lastname' placeholder='lastname'></input></td><td><select class='form-control' id='role' name='role'><option disable> Select a role ...</option><option value='admin'> admin </option><option value='director'>director</option><option value='member'> member</option></select></td><td><input type='date' id='birthdate' ></input></td><td><input type='text' id='address' placeholder='address'></input></td><td><input type='text' id='mobile' placeholder='mobile'></input></td><td><input type='text' id='city' placeholder='city'></input></td><td><input type='text' id='country' placeholder='country'></input></td><td><input type='text' id='personalhomepage' placeholder='Personal homepage'></input></td>";
