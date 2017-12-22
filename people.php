@@ -7,11 +7,12 @@
     <title>ACM - People</title>
     <meta name="description" content="Free Bootstrap Theme by ProBootstrap.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/styles-merged.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="CSS1//custom.css">
+    <ling rel="stylesheet" href="CSS1/people.css">
 
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
@@ -28,84 +29,46 @@
       document.getElementById("people").classList.add("active");
      </script>
       <!-- End of NAVBAR -->
-            
-      <section class="probootstrap-section probootstrap-section-colored" >
-        <div class="container" class="bg-info text-white" >
-          <div class="row" >
-            <div class="col-md-12 text-left section-heading probootstrap-animate">
-              <h1>People</h1>
-            </div>
-          </div>
-        </div>
-      </section>
-<?php 
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "SoftwareDesign";
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  } 
+
+
+<?php
+
+      include 'include/dbconfig.php';
+
   $conn->query("SET NAMES utf8");
-  $sql = ("SELECT * FROM teachers");
+  $sql = ("SELECT * FROM officers");
   $result = $conn->query($sql);
   $count = 0;
 
 
 ?>
-      
 
 
-      
-      
+
+
+
       <section class="probootstrap-section">
         <div class="container">
-        	
-          <div class="row col-md-12 col-sm-12">
-          	<?php
-        	echo "<h3>'.(mysqli_fetch_assoc($result))['t_department'].'</h3>";
-        	?>
-          </div>
 
+
+          <h class='topic'>PSU-ACM OFFICERS</h>
           <div class="row">
 
 <?php
-  
+
   foreach ($result as $row) {
 ?>
 
             <div class="col-md-3 col-sm-6">
               <div class="probootstrap-teacher text-center probootstrap-animate">
                 <figure class="media">
-                  <img src="<?php echo $row['t_image'];?>" alt="" class="img-responsive">
+                  <img src="<?php echo $row['image'];?>" alt="" class="img-responsive">
                 </figure>
                 <div class="text">
-                  <h3 id="name"><?php echo $row['t_name'];?></h3>
-                  <p><?php echo $row['t_position'];?></p>
-                  <p id="info<?php echo $row['t_id'];?>">
+                  <h3 id="name"><?php echo $row['name'];?></h3>
+                  <p><?php echo $row['position'];?></p>
+                  <p <?php echo $row['email'];?>>
                   </p>
-                  <ul class="probootstrap-footer-social">
-                    <li>
-                    	<button class="b" style="color:#1E90FF" title="<?php echo $row['t_email'];?>" onclick="displayEmail(title,<?php echo $row['t_id'];?>)">
-                    		<i class="icon-email">	
-                    		</i>
-                    	</button>
-                    </li>
-                    <li>
-                    	<button class="b" title="<?php echo $row['t_name_AR'];?>" onclick="displayArabicName(title,<?php echo $row['t_id'];?>)">
-                    		<span style="color:	#2E8B57;font-size: 14px; position: relative;bottom: 4px;">
-                    		 ع
-                    		</span>
-                    	</button>
-                    </li>
-                    <li>
-                    	<button class="b" style="color:#CD5C5C;" title="<?php echo $row['t_phone'];?>" onclick="displayPhone(title,<?php echo $row['t_id'];?>)">
-                    		<i class="icon-phone">
-                    		</i>
-                    	</button>
-                    </li> 
-                  </ul>
                 </div>
               </div>
             </div>
@@ -119,7 +82,65 @@ if($count%4==0){
   echo '</div>';
   echo '<div class="row">';
 }
-} 
+}
+?>
+
+
+
+            <div class="clearfix visible-sm-block visible-xs-block"></div>
+
+
+
+
+          </div>
+
+        </div>
+
+            <?php
+            $conn->query("SET NAMES utf8");
+            $sql = ("SELECT * FROM committees");
+            $result = $conn->query($sql);
+            $count = 0;
+
+
+             ?>
+             <h>PSU-ACM Committees</h>
+
+        <div class="container">
+
+
+          <div class="row">
+
+<?php
+
+  foreach ($result as $row) {
+?>
+
+            <div class="col-md-3 col-sm-6">
+              <div class="probootstrap-teacher text-center probootstrap-animate">
+                <figure class="media">
+                  <img src="<?php echo $row['image'];?>" alt="" class="img-responsive">
+                </figure>
+                <div class="text">
+                  <h3 id="name"><?php echo $row['name'];?></h3>
+                  <p><?php echo $row['position'];?></p>
+                  <p><?php echo $row['id'];?></p>
+                  <p <?php echo $row['email'];?>></p>
+
+                </div>
+              </div>
+            </div>
+<?php
+$count++;
+if($count%2==0){
+echo '<div class="clearfix visible-sm-block visible-xs-block">';
+echo '</div>';
+}
+if($count%4==0){
+  echo '</div>';
+  echo '<div class="row">';
+}
+}
 ?>
 
 
@@ -133,15 +154,15 @@ if($count%4==0){
 
         </div>
       </section>
-      
+
       <?php
-          include "footer.html";
+          include "footer.php";
           ?>
 
     </div>
     <!-- END wrapper -->
-    
-    <script>
+
+  <!--  <script>
       var checkEmail = [];
       var checkName = [];
       var checkPhone = [];
@@ -180,7 +201,7 @@ if($count%4==0){
       checkPhone[id] = 0;
       document.getElementById("info"+id+"").innerHTML = "";
     }
-  }
+  }-->
     </script>
     <script src="js/scripts.min.js"></script>
     <script src="js/main.min.js"></script>
