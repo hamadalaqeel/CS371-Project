@@ -102,29 +102,28 @@
             } else if ($role == 'admin') {
                 echo '<tr class="danger">';
             } else {
-                echo "<tr> ";
+                echo "<tr>";
             }
+                    $email = $row['email'];
+
             ?>
             <script>
                 //MAKING THE CURRENT PAGE ELEMENT ACTIVE IN THE NAVBAR
                 document.getElementById("users").classList.add("active");
             </script>
+            
 
-
-
-
-        <td contenteditable="true" onBlur="saveToDatabase(this, 'email', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["email"]; ?></td>
-        <td contenteditable="true" onBlur="saveToDatabase(this, 'password', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["password"]; ?></td>
-        <td contenteditable="true" onBlur="saveToDatabase(this, 'first_name', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["first_name"]; ?></td>
-        <td contenteditable="true" onBlur="saveToDatabase(this, 'last_name', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["last_name"]; ?></td>
-        <td contenteditable="true" onBlur="saveToDatabase(this, 'role', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["role"]; ?></td>
-        <td contenteditable="true" onBlur="saveToDatabase(this, 'birth_date', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["birth_date"]; ?></td>
-        <td contenteditable="true" onBlur="saveToDatabase(this, 'address', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["address"]; ?></td>
-        <td contenteditable="true" onBlur="saveToDatabase(this, 'mobile', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["mobile"]; ?></td>
-        <td contenteditable="true" onBlur="saveToDatabase(this, 'city', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["city"]; ?></td>
-        <td contenteditable="true" onBlur="saveToDatabase(this, 'counrty', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["counrty"]; ?></td>
-        <td contenteditable="true" onBlur="saveToDatabase(this, 'personal_home_page', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);"><?php echo $row["personal_home_page"]; ?></td>
-
+        <td><input  contenteditable="true"  onClick="showEdit(this);" style=";width: 90px;" type="text" onBlur="saveToDatabase(this, 'email', '<?php echo $row["email"]; ?>')" value="<?php echo $row["email"]; ?>"></td>
+        <td contenteditable="true" onClick="showEdit(this);"><input style=";width: 60px;" onBlur="saveToDatabase(this, 'password', '<?php echo $row["email"]; ?>')"  type="password" value="<?php echo $row["password"]; ?>"></td>
+        <td contenteditable="true" ><input style=";width: 80px;" type="text" onBlur="saveToDatabase(this, 'first_name', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["first_name"]; ?>"></td>
+        <td contenteditable="true" ><input style=";width: 80px;" type="text" onBlur="saveToDatabase(this, 'last_name', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["last_name"]; ?>"></td>
+        <td contenteditable="true" ><select style=";width: 80px;" type="text" onBlur="saveToDatabase(this, 'role', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["role"]; ?>"><option value="<?php echo $row["role"]; ?>" selected disabled> <?php echo $row["role"]; ?></option><option value='admin'> admin </option><option value='director'>director</option><option value='member'> member</option></select></td>
+        <td contenteditable="true" ><input style=";width: 110px;" type="date" onBlur="saveToDatabase(this, 'birth_date', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["birth_date"]; ?>"></td>
+        <td contenteditable="true" ><input style=";width: 70px;" type="text" onBlur="saveToDatabase(this, 'address', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["address"]; ?>"></td>
+        <td contenteditable="true" ><input style=";width: 86px;" type="text" onBlur="saveToDatabase(this, 'mobile', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["mobile"]; ?>"></td>
+        <td contenteditable="true" ><select style=";width: 80px;" type="text" onBlur="saveToDatabase(this, 'city', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["city"]; ?>"><option value="<?php echo $row["city"]; ?>" selected disabled> <?php echo $row["city"]; ?></option><option value="Riyadh">Riyadh</option><option value="Jeddah">Jeddah</option><option value="Dammam">Dammam</option><option value="Yanbu">Yanbu</option></select></td>
+        <td contenteditable="true" ><select style=";width: 80px;" type="text" onBlur="saveToDatabase(this, 'counrty', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["counrty"]; ?>"><option value="<?php echo $row["counrty"]; ?>" selected disabled> <?php echo $row["counrty"]; ?></option><option value="Saudi Arabia">Saudi Arabia</option><option value="Jordan">Jordan</option><option value="Yamen">Yamen</option></select></td>
+        <td contenteditable="true" ><input style=";width: 60px;" type="text" onBlur="saveToDatabase(this, 'personal_home_page', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["personal_home_page"]; ?>"></td>
 
         <!--
         
@@ -138,15 +137,10 @@
         <td>' . $row['city'] . '</td>';
         <td>' . $row['counrty'] . '</td>';
         <td>' . $row['personal_home_page'] . '</td>'; -->
-        <?php
-//$email = $row[email];
-//$sql= "DELETE * FROM users WHERE $email=row[email]";
-//The ability to delete and modifiy each user.
-        $email = $row['email'];
-        ?>
 
 
-        <td><button id="deleteButton" onclick="deleteAlert('<?PHP echo $email; ?>', this)"  class="btn btn-danger">Delete User</button></td>
+
+        <td ><button id="deleteButton" onclick="deleteAlert('<?PHP echo $email; ?>',this)"  class="btn btn-danger">Delete User</button></td>
 
         <?php
         echo "</tr>";
@@ -186,10 +180,13 @@
             $.ajax({
                 url: "update_users.php",
                 type: "POST",
-                data: 'column=' + column + '&editval=' + editableObj.innerHTML + '&email=' + email,
+                data: 'column=' + column + '&editval=' + editableObj.value + '&email=' + email,
                 success: function (data) {
                     $(editableObj).css("background", "#EFF0F4");
                     $(editableObj).css("border", "3px solid lightgreen");
+                    
+                document.getElementById("alerts").innerHTML += "<div class=\"alert alert-info alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + column + " of "+ email+" successfully modified!</strong></div>";
+               
                 }
             });
         }
@@ -203,9 +200,11 @@
         var table = document.getElementById("myTable");
             var rowCount = table.rows.length;
             var row = table.insertRow(rowCount);
-            row.innerHTML = "<td><input type='email' id='email' placeholder='Email'></input></td><td><input type='password' id='password' placeholder='password'></input></td><td><input type='text' id='firstname' placeholder='firstname'></input></td><td><input type='text' id='lastname' placeholder='lastname'></input></td><td><select class='form-control' id='role' name='role'><option disable> Select a role ...</option><option value='admin'> admin </option><option value='director'>director</option><option value='member'> member</option></select></td><td><input type='date' id='birthdate' ></input></td><td><input type='text' id='address' placeholder='address'></input></td><td><input type='text' id='mobile' placeholder='mobile'></input></td><td><input type='text' id='city' placeholder='city'></input></td><td><input type='text' id='country' placeholder='country'></input></td><td><input type='text' id='personalhomepage' placeholder='Personal homepage'></input></td>";
+            row.innerHTML = "<td><input type='email' id='email' placeholder='Email'></input></td><td><input type='password' id='password' placeholder='password'></input></td><td><input type='text' id='firstname' placeholder='firstname'></input></td><td><input type='text' id='lastname' placeholder='lastname'></input></td><td><select class='form-control' id='role' name='role'><option disable> Select a role ...</option><option value='admin'> admin </option><option value='director'>director</option><option value='member'> member</option></select></td><td><input type='date' id='birthdate' ></input></td><td><input type='text' id='address' placeholder='address'></input></td><td><input type='text' id='mobile' placeholder='mobile'></input></td><td><select value='city' class='selectpicker' name='city' id='city'><option value='None'>City</option> <option value='Riyadh'>Riyadh</option>  <option value='Jeddah'>Jeddah</option><option value='Dammam'>Dammam</option><option value='Yanbu'>Yanbu</option></select></td><td><select value='country' class='selectpicker' name='country' id='country'> <option value='None'>Country</option> <option value='Saudi Arabia'>Saudi Arabia</option><option value='Jordan'>Jordan</option><option value='Yamen'>Yamen</option></select></td><td><input type='text' id='personalhomepage' placeholder='Personal homepage'></input></td>";
             row.style.fontSize = "0.58em";
+            
         }
+                $("#myTable").css('font-size','0.7em');
 
     </script>
     <script>
@@ -213,7 +212,7 @@
         function deleteAlert(email, r) {
             $(document).ready(function () {
                 $(this).click(function () {
-                    $(this).load("delete_users.php?email=" + email);
+                    $(this).load("delete_row.php?email="+email);
                 });
 
                 document.getElementById("alerts").innerHTML += "<div class=\"alert alert-danger alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + email + " successfully removed!</strong></div>";

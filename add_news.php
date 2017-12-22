@@ -82,7 +82,7 @@
         . "<th id='pic2'>pic2</th>"
         . "<th id='pic3'>pic3</th>"
         . "<th id='pic4'>pic4</th>"
-        . "<th><button id=''class='btn btn-primary' onclick='createRow()'>Add News</button> </th>"
+        . "<th><button id='addNews'class='btn btn-primary' onclick='createRow()'>Add News</button> </th>"
         . "</tr>"
         . "</thead>";
 
@@ -189,14 +189,14 @@
 
     <script>
         function createRow() {
-        $('#addUser').attr('disabled', true);
+        $('#addNews').attr('disabled', true);
     
             
         var table = document.getElementById("myTable");
             var rowCount = table.rows.length;
             var row = table.insertRow(rowCount);
             row.innerHTML = "<td><input type='email' id='email' placeholder='Email'></input></td><td><input type='password' id='password' placeholder='password'></input></td><td><input type='text' id='firstname' placeholder='firstname'></input></td><td><input type='text' id='lastname' placeholder='lastname'></input></td><td><select class='form-control' id='role' name='role'><option disable> Select a role ...</option><option value='admin'> admin </option><option value='director'>director</option><option value='member'> member</option></select></td><td><input type='date' id='birthdate' ></input></td><td><input type='text' id='address' placeholder='address'></input></td><td><input type='text' id='mobile' placeholder='mobile'></input></td><td><input type='text' id='city' placeholder='city'></input></td><td><input type='text' id='country' placeholder='country'></input></td><td><input type='text' id='personalhomepage' placeholder='Personal homepage'></input></td>";
-            row.style.fontSize = "0.28em";
+            row.style.fontSize = "0.37em";
         }
 
     </script>
@@ -205,7 +205,7 @@
         function deleteAlert(id, r) {
             $(document).ready(function () {
                 $(this).click(function () {
-                    $(this).load("delete_users.php?id=" + id);
+                    $(this).load("delete_row.php?id=" + id);
                 });
 
                 document.getElementById("alerts").innerHTML += "<div class=\"alert alert-danger alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + id + " successfully removed!</strong></div>";
@@ -226,17 +226,6 @@
     <script> $(document).ready(function () {
                 $("#myTable").css('font-size','0.6em');
                 
-                $("#id").css('width','0.1em');
-                $("#title").css('width','10%');
-                $("#short_desc").css('width','17%');
-                $("#long_desc").css('width','40%');
-                $("#date").css('width','5%');
-                $("#pic1").css('width','5%');
-                $("#pic2").css('width','5%');
-                $("#pic3").css('width','5%');
-                $("#pic4").css('width','5%');
-                $("#addUser").css('width','5%');
-       
                 
             });
             </script>
