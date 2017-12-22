@@ -82,7 +82,7 @@
         . "<th id='pic2'>pic2</th>"
         . "<th id='pic3'>pic3</th>"
         . "<th id='pic4'>pic4</th>"
-        . "<th id='Add_News'><button id='addUser'class='btn btn-primary' onclick='createRow()'>Add News</button> </th>"
+        . "<th><button id=''class='btn btn-primary' onclick='createRow()'>Add News</button> </th>"
         . "</tr>"
         . "</thead>";
 
@@ -95,7 +95,7 @@
 // Echo out the contents of each row into a table
             //Echo The information of each user.
           
-                echo "<tr> ";
+                echo "<tr style='height:100px'> ";
             //<script> document.getElementById("#fileUpload").innerHTML= this.value;</script>  
             ?>
             <script>
@@ -105,35 +105,17 @@
             </script>
 
 
+        <td ><input  style="height:100px;width: 25px;" contenteditable="true" onBlur="saveToDatabase(this, 'id', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="number" value="<?php echo $row["id"]; ?>"></td>
+        <td ><textarea rows="8" cols="8" contenteditable="true" onBlur="saveToDatabase(this, 'title', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" ><?php echo $row["title"]; ?></textarea></td>
+        <td ><textarea rows="8" cols="15" contenteditable="true" onBlur="saveToDatabase(this, 'short_desc', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" ><?php echo $row["short_desc"]; ?></textarea></td>
+        <td ><textarea rows="8" cols="30" contenteditable="true" onBlur="saveToDatabase(this, 'long_desc', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" ><?php echo $row["long_desc"]; ?></textarea></td>
+        <td ><input  contenteditable="true" onBlur="saveToDatabase(this, 'date', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="date" value="<?php echo $row["date"]; ?>"></td>
+        <td ><input style="height:100px;width: 100px;" contenteditable="true" onBlur="saveToDatabase(this, 'pic1', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="file" value="<?php echo $row["pic1"];?>" ></div></td>
+        <td id="pic2" ><input style="height:100px;width: 100px;" contenteditable="true" onBlur="saveToDatabase(this, 'pic2', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="file" value="<?php echo $row["pic2"]; ?>"></td>
+        <td id="pic3" ><input style="height:100px;width: 100px;" contenteditable="true" onBlur="saveToDatabase(this, 'pic3', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="file" value="<?php echo $row["pic3"]; ?>"></td>
+        <td id="pic4"><input style="height:100px;width: 100px;" contenteditable="true" onBlur="saveToDatabase(this, 'pic4', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="file" value="<?php echo $row["pic4"]; ?>"></td>
 
-
-        <td id="id"><input  id="id" contenteditable="true" onBlur="saveToDatabase(this, 'id', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="number" value="<?php echo $row["id"]; ?>"></td>
-        <td id="title"><input id="title" contenteditable="true" onBlur="saveToDatabase(this, 'title', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="text" value="<?php echo $row["title"]; ?>"></td>
-        <td id="short_desc"><input id="short_desc" contenteditable="true" onBlur="saveToDatabase(this, 'short_desc', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="text" value="<?php echo $row["short_desc"]; ?>"></td>
-        <td id="long_desc"><input id="long_desc" contenteditable="true" onBlur="saveToDatabase(this, 'long_desc', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="text" value="<?php echo $row["long_desc"]; ?>"></td>
-        <td id="date"><input id="date" contenteditable="true" onBlur="saveToDatabase(this, 'date', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="date" value="<?php echo $row["date"]; ?>"></td>
-        <td id="pic1"><input id="pic1" contenteditable="true" onBlur="saveToDatabase(this, 'pic1', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="file" value="<?php echo $row["pic1"];?>" ></td>
-        <td id="pic2" ><input id="pic2" contenteditable="true" onBlur="saveToDatabase(this, 'pic2', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="file" value="<?php echo $row["pic2"]; ?>"></td>
-        <td id="pic3" ><input id="pic3" contenteditable="true" onBlur="saveToDatabase(this, 'pic3', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="file" value="<?php echo $row["pic3"]; ?>"></td>
-        <td id="pic4"><input id="pic4" contenteditable="true" onBlur="saveToDatabase(this, 'pic4', '<?php echo $row["id"]; ?>')" onClick="showEdit(this);" type="file" value="<?php echo $row["pic4"]; ?>"></td>
-
-            <script>
-
-        $(document).ready(function () {
-                $("#id").width(50);
-                $("#title").css('width','10%');
-                $("#short_desc").css('width','17%');
-                $("#long_desc").css('width','40%');
-                $("#date").css('width','5%');
-                $("#pic1").css('width','5%');
-                $("#pic2").css('width','5%');
-                $("#pic3").css('width','5%');
-                $("#pic4").css('width','5%');
-                $("#addUser").css('width','5%');
-
-
-            });
-                    </script>
+       
 
         <!--
         
@@ -155,7 +137,7 @@
         ?>
 
 
-        <td id='Add_News'><button id='Add_News' onclick="deleteAlert('<?PHP echo $id; ?>', this)"  class="btn btn-danger">Delete New</button></td>
+        <td ><button onclick="deleteAlert('<?PHP echo $id; ?>', this)"  class="btn btn-danger">Delete New</button></td>
 
         <?php
         echo "</tr>";
@@ -171,6 +153,7 @@
     echo "</div>";
     echo "</div>";
     ?>
+
 
 
 
@@ -242,7 +225,18 @@
 
     <script> $(document).ready(function () {
                 $("#myTable").css('font-size','0.6em');
-                $("#saveUser").css('width','0.2em');
+                
+                $("#id").css('width','0.1em');
+                $("#title").css('width','10%');
+                $("#short_desc").css('width','17%');
+                $("#long_desc").css('width','40%');
+                $("#date").css('width','5%');
+                $("#pic1").css('width','5%');
+                $("#pic2").css('width','5%');
+                $("#pic3").css('width','5%');
+                $("#pic4").css('width','5%');
+                $("#addUser").css('width','5%');
+       
                 
             });
             </script>
