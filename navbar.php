@@ -129,9 +129,14 @@
                         if (isset($_SESSION["email"])) {
 
                             $role = $_SESSION["role"];
-                            if ($role == "admin") {
+                           if ($role == "admin") {
                                 echo "<li id=\"users\">  <a  href=\"users.php\">   Users</a>   </li>";
                                 echo "<li id=\"edit_news\" >  <a  href=\"add_news.php\">  Edit news</a>   </li>";
+                                echo "<li id=\"edit_news\" >  <a  href=\"add_news.php\">  Edit ACM Members</a>   </li>";
+                                echo "<li id=\"edit_news\" >  <a  href=\"add_news.php\">  Edit Confrences</a>   </li>";
+                            }else if ($role == "director"){
+                              echo "<li id=\"edit_news\" >  <a  href=\"add_news.php\">  Edit news</a>   </li>";
+                              echo "<li id=\"edit_news\" >  <a  href=\"add_news.php\">  Edit Conferences</a>   </li>";
                             }
                         }
                         ?>
