@@ -164,7 +164,7 @@
                     <ul class="nav navbar-nav">
 
                         <li id="news"  >        <a href="news.php">        News       </a>        </li>
-                        <li id="conferences">   <a  href="conferences.php"> Conferences</a>        </li>
+                <!--        <li id="conferences">   <a  href="conferences.php"> Conferences</a>        </li>-->
                         <li id="people">        <a  href="people.php">      People     </a>        </li>
                         <li id="contact">          <a  href="Contact.php">     Contact Us</a>        </li>
                  
@@ -179,7 +179,6 @@
                     <a id="users" href="users.php">Users</a>
                     <a  id="edit_news" href="edit_news.php">News</a>
                     <a id="edit_people" href="edit_people.php">People</a>
-                    <a id="edit_conferences" href="edit_conferences">Conferences</a>
                     
                     </div>
                     </div>';
@@ -187,7 +186,7 @@
                                 echo '<li id="users">  <a  href="users.php">   <font color="red">USERS</font></a>   </li>';
                                 echo '<li id="edit_news" >  <a  href="edit_news.php"> <font color="red">NEWS</font></a>   </li>';
                                 echo '<li id="edit_people" >  <a  href="edit_people.php">  <font color="red">PEOPLE</font></a>   </li>';
-                                echo '<li id="edit_news" >  <a  href=\"add_news.php\">  <font color="red">CONFERENCES</font></a>   </li>';*/
+                                echo '<li id="edit_news" >  <a  href=\"edit_conferences.php\">  <font color="red">CONFERENCES</font></a>   </li>';*/
                             }else if ($role == "director"){
                                                             echo '  <div class="dropdown">
                   <button class="dropbtn">Edit</button>

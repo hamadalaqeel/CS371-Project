@@ -194,7 +194,7 @@
         function deleteAlert(id, r) {
             $(document).ready(function () {
                 $(this).click(function () {
-                    $(this).load("delete_news.php?id=" + id);
+                    $(this).load("delete_row.php?id=" + id);
                 });
 
                 document.getElementById("alerts").innerHTML += "<div class=\"alert alert-danger alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + id + " successfully removed!</strong></div>";

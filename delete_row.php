@@ -29,6 +29,21 @@ if ($conn->query($sql) === TRUE) {
 }
     
 }
+else if(isset($_GET['name_of_conf'])){
+     $id = $_GET['name_of_conf'];
+
+//Setting up the database and deleting the user from the database.
+include 'include/dbconfig.php';
+$conn->query("SET NAMES utf8");
+$sql = "DELETE FROM conference WHERE name_of_conf='$id'";
+
+if ($conn->query($sql) === TRUE) {
+    
+} else {
+    echo "Error deleting record: " . $conn->error;
+}
+    
+}
 ?>
       
 
