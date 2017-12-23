@@ -60,7 +60,7 @@
         echo '<br>';
         echo"<span id='adding_error'></span>";
         echo '<div class="table-responsive">';
-        echo "<table id='PeopleTable' class='table table-striped table-bordered table-hover table-condensed table-responsive'>";
+        echo "<table id='myTable' class='table table-striped table-bordered table-hover table-condensed table-responsive'>";
 
 //. "<th> <a href='signup.php' class='btn btn-primary'> Add </a> </th>"
 //MetaData
@@ -176,7 +176,7 @@
 
                 document.getElementById("alerts").innerHTML += "<div class=\"alert alert-danger alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + email + " successfully removed!</strong></div>";
                 var i = r.parentNode.parentNode.rowIndex;
-                document.getElementById("PeopleTable").deleteRow(i);
+                document.getElementById("myTable").deleteRow(i);
 
             });
 
@@ -194,7 +194,7 @@
                 });
                 document.getElementById("alerts").innerHTML += "<div class=\"alert alert-danger alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + id + " successfully removed!</strong></div>";
                 var i = r.parentNode.parentNode.rowIndex;
-                document.getElementById("PeopleTable").deleteRow(i);
+                document.getElementById("myTable").deleteRow(i);
 
             });
 

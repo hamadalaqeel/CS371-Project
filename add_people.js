@@ -24,29 +24,22 @@ function getXMLHTTPRequest() {
 
 //sending the request to the server
 function addRowRequest() {
+    var id = document.getElementById("id").value;
     var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var firstname = document.getElementById("firstname").value;
-    var lastname = document.getElementById("lastname").value;
-    var role = document.getElementById("role").value;
-    var birthdate = document.getElementById("birthdate").value;
-    var address = document.getElementById("address").value;
-    var mobile = document.getElementById("mobile").value;
-    var city = document.getElementById("city").value;
-    var country = document.getElementById("country").value;
-    var personalhomepage = document.getElementById("personalhomepage").value;
+    var name = document.getElementById("name").value;
+    var position = document.getElementById("position").value;
+    var image = document.getElementById("image").value;
     
     
 
-    if (email !== '' && password !== '' && firstname !== '' && lastname !== '' && role!== '' && birthdate!== '' 
-            && address!== '' && mobile!== '' && city !== '' && country!== '' && personalhomepage!== '') {
+    if (id !== '' && email !== '' && name !== '' && position !== '' && image !== '') {
 
         //if the server is not busy and is ready to communicate
         if ((xmlHttp.readyState == 0) || (xmlHttp.readyState == 4)) {
-            xmlHttp.open("POST", "add_user.php", true);
+            xmlHttp.open("POST", "add_people.php", true);
             xmlHttp.onreadystatechange = AddRowResponseCallback;
             xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xmlHttp.send("email=" + email + "&password=" + password + "&firstname=" + firstname + "&lastname=" + lastname + "&role=" + role + "&birthdate=" + birthdate + "&address=" + address + "&mobile=" + mobile + "&city=" + city + "&country=" + country + "&personalhomepage=" + personalhomepage);
+            xmlHttp.send("id=" + id + "&email=" + email + "&name=" + name + "&position=" + position + "&image=" + image);
                 window.history.go(0);
 
         }
@@ -72,25 +65,18 @@ function AddRowResponseCallback() {
             rowCount--;
 
             var code = xmlResponse.getElementsByTagName("code")[0].childNodes[0].nodeValue;
-
-            var email = xmlResponse.getElementsByTagName("email")[0].childNodes[0].nodeValue;
-            var password = xmlResponse.getElementById("password")[0].childNodes[0].nodeValue;
-            var firstname = xmlResponse.getElementById("firstname")[0].childNodes[0].nodeValue;
-            var lastname = xmlResponse.getElementById("lastname")[0].childNodes[0].nodeValue;
-            var role = xmlResponse.getElementById("role")[0].childNodes[0].nodeValue;
-            var birthdate = xmlResponse.getElementById("birthdate")[0].childNodes[0].nodeValue;
-            var address = xmlResponse.getElementById("address")[0].childNodes[0].nodeValue;
-            var mobile = xmlResponse.getElementById("mobile")[0].childNodes[0].nodeValue;
-            var city = xmlResponse.getElementById("city")[0].childNodes[0].nodeValue;
-            var country = xmlResponse.getElementById("country")[0].childNodes[0].nodeValue;
-            var personalhomepage = xmlResponse.getElementById("personalhomepage")[0].childNodes[0].nodeValue;
+            var id = xmlResponse.getElementsByTagName("id")[0].childNodes[0].nodeValue;
+            var email = xmlResponse.getElementById("email")[0].childNodes[0].nodeValue;
+            var name = xmlResponse.getElementById("firstname")[0].childNodes[0].nodeValue;
+            var position = xmlResponse.getElementById("lastname")[0].childNodes[0].nodeValue;
+          
 
             if (code == '1') {
                 var row = table.insertRow(rowCount);
-                row.innerHTML = "<td>" + email + "</td><td>" + password + "</td><td>" + firstname + "</td><td>" + lastname + "</td><td>" + birthdate + "</td><td>" + address + "</td><td>" + mobile + "</td><td>" + city + "</td><td>" + country + "</td><td>" + personalhomepage + "</td>";
+                row.innerHTML = "<td>" + id + "</td><td>" + email + "</td><td>" + name + "</td><td>" + position + "</td><td>" + image + "</td>" ;
                 
             } else {
-                alert("Adding is unsuccessfully!");
+                alert("Adding Is Unsuccessful!");
             }
         }
     }

@@ -2,21 +2,14 @@
 
 include 'include/dbconfig.php';
 
+$id = $_POST["id"];
 $email = $_POST["email"];
-$password = $_POST["password"];
-$firstname = $_POST["firstname"];
-$lastname = $_POST["lastname"];
-$role = $_POST["role"];
-$birthdate = $_POST["birthdate"];
-$joindate = date();
-$address = $_POST["address"];
-$mobile = $_POST["mobile"];
-$city = $_POST["city"];
-$country = $_POST["country"];
-$personalhomepage = $_POST["personalhomepage"];
+$name= $_POST["name"];
+$position = $_POST["position"];
+$image = $_POST["image"];
 $response_code = '-1';
 
-$sql = "INSERT INTO users (email,password,first_name,last_name,role, birth_date,join_date,address,mobile,city,counrty,personal_home_page) VALUES ('$email','$password','$firstname','$lastname','$role','$birthdate','$joindate','$address',$mobile,'$city','$country','$personalhomepage');";
+$sql = "INSERT INTO committees (id,email,name,position,image) VALUES ('$id','$email','$name','$position','$image');";
 $result = $conn->query($sql);
 
 
@@ -32,14 +25,10 @@ header('Content-Type: text/xml');
 echo ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>');
 echo ('<response>');
 echo '<code>' . $response_code . '</code>';
-echo '<password>' . $password . '</password>';
-echo '<firstname>' . $firstname . '</firstname>';
-echo '<lastname>' . $lastname . '</lastname>';
-echo '<role>' . $role . '</role>';
-echo '<birthdate>' . $birthdate . '</birthdate>';
-echo '<mobile>' . $mobile . '</mobile>';
-echo '<city>' . $city . '</city>';
-echo '<country>' . $country . '</country>';
-echo '<personalhomepage>' . $personalhomepage . '</personalhomepage>';
+echo '<id>' . $id . '</id>';
+echo '<email>' . $email . '</email>';
+echo '<name>' . $lastname . '</name>';
+echo '<position>' . $role . '</position>';
+echo '<image>' . $birthdate . '</image>';
 echo ('</response>');
 ?>
