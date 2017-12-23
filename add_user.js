@@ -43,7 +43,7 @@ function addRowRequest() {
 
         //if the server is not busy and is ready to communicate
         if ((xmlHttp.readyState == 0) || (xmlHttp.readyState == 4)) {
-            xmlHttp.open("POST", "addUsers.php", true);
+            xmlHttp.open("POST", "add_user.php", true);
             xmlHttp.onreadystatechange = AddRowResponseCallback;
             xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xmlHttp.send("email=" + email + "&password=" + password + "&firstname=" + firstname + "&lastname=" + lastname + "&role=" + role + "&birthdate=" + birthdate + "&address=" + address + "&mobile=" + mobile + "&city=" + city + "&country=" + country + "&personalhomepage=" + personalhomepage);

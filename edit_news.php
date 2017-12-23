@@ -59,14 +59,13 @@
         echo "<div id='alerts'>";
         echo "</div>";
         echo "</div>";
-        echo "<div class='container'>";
-        echo "<div class='row'>";
+        echo "<div class='container-fluid'>";
+        echo "<div class='row-fluid'>";
         echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>";
         echo '<br>';
-        echo "<h3 id='newsTitle'>News:</h3>";
-        echo "<button id='saveButton' class='btn btn-warning' onclick='addRowRequest()'>Save New</button>";
-        echo '<br>';
-        echo '<br>';
+        echo "<h3 style='text-align:center' id='newsTitle'>News:</h3>";
+       // echo "<button id='saveButton' class='btn btn-warning' onclick='addRowRequest()'>Save New</button>";
+   
         echo"<span id='adding_error'></span>";
         echo '<div class="table-responsive">';
         echo "<table id='myTable' class='table table-striped table-bordered table-hover table-condensed table-responsive'>";
@@ -85,7 +84,7 @@
         . "<th id='pic2'>pic2</th>"
         . "<th id='pic3'>pic3</th>"
         . "<th id='pic4'>pic4</th>"
-        . "<th><button id=''class='btn btn-primary' onclick='createRow()'>Add News</button> </th>"
+        . "<th  ><button class='btn btn-primary' ><a href='add_news.php' style='color:inherit'>Add News</a></button> </th>"
         . "</tr>"
         . "</thead>";
 
@@ -120,23 +119,10 @@
 
        
 
-        <!--
-        
-        <td>' . $row['password'] . '</td>';
-        <td>' . $row['first_name'] . '</td>';
-        <td>' . $row['last_name'] . '</td>';
-        <td>' . $row['role'] . '</td>';
-        <td>' . $row['birth_date'] . '</td>';
-        <td>' . $row['address'] . '</td>';
-        <td>' . $row['mobile'] . '</td>';
-        <td>' . $row['city'] . '</td>';
-        <td>' . $row['counrty'] . '</td>';
-        <td>' . $row['personal_home_page'] . '</td>'; -->
+
         <?php
-//$email = $row[email];
-//$sql= "DELETE * FROM users WHERE $email=row[email]";
-//The ability to delete and modifiy each user.
-       $id = $row['title'];
+
+       $id = $row['id'];
         ?>
 
 
@@ -198,17 +184,17 @@
         var table = document.getElementById("myTable");
             var rowCount = table.rows.length;
             var row = table.insertRow(rowCount);
-            row.innerHTML = "<td><input type='email' id='email' placeholder='Email'></input></td><td><input type='password' id='password' placeholder='password'></input></td><td><input type='text' id='firstname' placeholder='firstname'></input></td><td><input type='text' id='lastname' placeholder='lastname'></input></td><td><select class='form-control' id='role' name='role'><option disable> Select a role ...</option><option value='admin'> admin </option><option value='director'>director</option><option value='member'> member</option></select></td><td><input type='date' id='birthdate' ></input></td><td><input type='text' id='address' placeholder='address'></input></td><td><input type='text' id='mobile' placeholder='mobile'></input></td><td><input type='text' id='city' placeholder='city'></input></td><td><input type='text' id='country' placeholder='country'></input></td><td><input type='text' id='personalhomepage' placeholder='Personal homepage'></input></td>";
-            row.style.fontSize = "0.70em";
+            row.innerHTML = "<td><input type='number' id='id' placeholder='ID'></input></td><td><input type='text' id='title' placeholder='title'></input></td><td><input type='text' id='short_desc' placeholder='short description'></input></td><td><input type='text' id='long_desc' placeholder='long description'><textarea rows='8' cols='8'></textarea></input></td><td><input type='date' id='date' ></input></td><td><input type='file' id='pic1' ></input></td><td><input type='file' id='pic2' ></input></td><td><input type='file' id='pic3' ></input></td><td><input type='file' id='pic4' ></input></td>";
+            row.style.fontSize = "0.80em";
         }
-
+                                            //id title short_desc long desc date pic1 pic2 pic3 pic4
     </script>
     <script>
 
         function deleteAlert(id, r) {
             $(document).ready(function () {
                 $(this).click(function () {
-                    $(this).load("delete_row.php?title=" + id);
+                    $(this).load("delete_news.php?id=" + id);
                 });
 
                 document.getElementById("alerts").innerHTML += "<div class=\"alert alert-danger alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + id + " successfully removed!</strong></div>";
@@ -227,7 +213,7 @@
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 
     <script> $(document).ready(function () {
-                $("#myTable").css('font-size','0.6em');
+                $("#myTable").css('font-size','0.8em');
                 
                 $("#id").css('width','0.1em');
                 $("#title").css('width','10%');

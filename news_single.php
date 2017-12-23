@@ -72,7 +72,7 @@
                       
             <li id="photos"  >                 <a  href="#photos">        Photos       </a>        </li>
           
-                  <p>This was posted on: <?php echo $row["date"];?></p>
+                  <p>Date: <?php echo $row["date"];?></p>
             <li id="contact" class="active"> <a  href="Contact.php">     Contact Us!</a>        </li>
                     </ul>
                   </div>

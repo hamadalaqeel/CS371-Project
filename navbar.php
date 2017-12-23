@@ -124,7 +124,7 @@
                         <li id="news"  >        <a href="news.php">        News       </a>        </li>
                         <li id="conferences">   <a  href="conferences.php"> Conferences</a>        </li>
                         <li id="people">        <a  href="people.php">      People     </a>        </li>
-                        <li id="contact">          <a  href="Contact.php">     Contact us</a>        </li>
+                        <li id="contact">          <a  href="Contact.php">     Contact Us</a>        </li>
 
                         <?php
                         if (isset($_SESSION["email"])) {
@@ -132,10 +132,10 @@
                             $role = $_SESSION["role"];
                            if ($role == "admin") {
                                 echo '<li > <a> <font color="red">EDIT:</font></a></li > ';
-                                echo '<li id=\"users\">  <a  href="users.php">   <font color="red">USERS</font></a>   </li>';
-                                echo '<li id=\"edit_news\" >  <a  href="edit_news.php"> <font color="red">NEWS</font></a>   </li>';
-                                echo '<li id=\"people_table\" >  <a  href="people_table.php">  <font color="red">PEOPLE</font></a>   </li>';
-                                echo '<li id=\"edit_news\" >  <a  href=\"add_news.php\">  <font color="red">CONFERENCES</font></a>   </li>';
+                                echo '<li id="users">  <a  href="users.php">   <font color="red">USERS</font></a>   </li>';
+                                echo '<li id="edit_news" >  <a  href="edit_news.php"> <font color="red">NEWS</font></a>   </li>';
+                                echo '<li id="edit_people" >  <a  href="edit_people.php">  <font color="red">PEOPLE</font></a>   </li>';
+                                echo '<li id="edit_news" >  <a  href=\"add_news.php\">  <font color="red">CONFERENCES</font></a>   </li>';
                             }else if ($role == "director"){
                                 echo' <li >  <font color="#0099cc">EDIT:</font></li > ';
                                 echo '<li id=\"edit_news\" >  <a  href=\"add_news.php\"> <font color="red">NEWS</font></a>   </li>';

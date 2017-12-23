@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>PSU-ACM Members</title>
+        <title>ACM - Edit Members</title>
         <meta name="description" content="Free Bootstrap Theme by ProBootstrap.com">
         <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -56,16 +56,18 @@
         echo '<br>';
         echo "<h3 style='text-align:center'>PSU-ACM Members:</h3>";
         echo "<button id='saveButton' class='btn btn-warning' onclick='addRowRequest()'>Save Member</button>";
+        echo '<br>';
+        echo '<br>';
         echo"<span id='adding_error'></span>";
         echo '<div class="table-responsive">';
-        echo "<table id='myTable' class='table table-striped table-bordered table-hover table-condensed table-responsive'>";
+        echo "<table id='PeopleTable' class='table table-striped table-bordered table-hover table-condensed table-responsive'>";
 
 //. "<th> <a href='signup.php' class='btn btn-primary'> Add </a> </th>"
 //MetaData
         echo '<thead>';
         echo "<tr> "
         . "<th>ID</th>"
-        . "<th>EMail</th>"
+        . "<th>Email</th>"
         . "<th>Name</th>"
         . "<th>Position</th>"
         . "<th>Image</th>"
@@ -83,34 +85,26 @@
 
 // Echo out the contents of each row into a table
             //Echo The information of each user.
-            if ($role == 'member') {
-                echo '<tr class="success">';
-            } else if ($role == 'director') {
-                echo '<tr class="info">';
-            } else if ($role == 'admin') {
-                echo '<tr class="danger">';
-            } else {
-                echo "<tr>";
-            }
-                    $id = $row['id'];
+           
 
             ?>
             <script>
                 //MAKING THE CURRENT PAGE ELEMENT ACTIVE IN THE NAVBAR
-                document.getElementById("people_table").classList.add("active");
+                document.getElementById("edit_people").classList.add("active");
             </script>
 
 
         <td><input  contenteditable="true"  onClick="showEdit(this);" style=";width: 90px;" type="text" onBlur="saveToDatabase(this, 'id', '<?php echo $row["email"]; ?>')" value="<?php echo $row["id"]; ?>"></td>
-        <td contenteditable="true" onClick="showEdit(this);"><input style=";width: 220px;" onBlur="saveToDatabase(this, 'email', '<?php echo $row["email"]; ?>')"  type="text" value="<?php echo $row["email"]; ?>"></td>
+        <td contenteditable="true" ><input style=";width: 250px;" type="text" onBlur="saveToDatabase(this, 'email', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["email"]; ?>"></td>
         <td contenteditable="true" ><input style=";width: 250px;" type="text" onBlur="saveToDatabase(this, 'name', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["name"]; ?>"></td>
         <td contenteditable="true" ><input style=";width: 220px;" type="text" onBlur="saveToDatabase(this, 'position', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["position"]; ?>"></td>
         <td contenteditable="true" ><input style=";width: 300px;" type="file" onBlur="saveToDatabase(this, 'image', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["image"]; ?>"></td>
 
 
 
+        <td ><button id="deleteButton" onclick="deleteAlert('<?PHP echo $id; ?>',this)"  class="btn btn-danger">Delete User</button></td>
+
         <?php
-        echo '<td><button class="btn btn-danger"><a href="delete_people.php?id=' . $row['id'] . '"></a>Delete</button></td>';
         echo "</tr>";
     }
 
@@ -124,9 +118,6 @@
     echo "</div>";
     echo "</div>";
     ?>
-
-
-
     <!-- THE FOOTER -->
     <?php
     include 'footer.php';
@@ -153,7 +144,7 @@
                     $(editableObj).css("background", "#EFF0F4");
                     $(editableObj).css("border", "3px solid lightgreen");
 
-                document.getElementById("alerts").innerHTML += "<div class=\"alert alert-info alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + column + " of "+ email+" successfully modified!</strong></div>";
+                document.getElementById("alerts").innerHTML = "<div class=\"alert alert-info alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + column + " of "+ email+" successfully modified!</strong></div>";
 
                 }
             });
@@ -169,27 +160,46 @@
             var rowCount = table.rows.length;
             var row = table.insertRow(rowCount);
             row.innerHTML = "<td><input type='number' id='id' placeholder='ID'></input></td><td><input type='text' id='email' placeholder='Email'></input></td><td><input type='text' id='name' placeholder='Name'></input></td><td><input type='text' id='position' placeholder='Position'></input></td><td><input type='file' id='image' ></input></td>";
-            row.style.fontSize = "0.58em";
+            row.style.fontSize = "0.8em";
 
         }
-                $("#myTable").css('font-size','0.7em');
+                $("#myTable").css('font-size','0.8em');
 
     </script>
     <script>
 
-        function deleteAlert(email, r) {
+        function deleteAlert(id, r) {
             $(document).ready(function () {
                 $(this).click(function () {
-                    $(this).load("delete_people.php?email="+email);
+                    $(this).load("delete_people.php?id="+id);
                 });
 
                 document.getElementById("alerts").innerHTML += "<div class=\"alert alert-danger alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + email + " successfully removed!</strong></div>";
                 var i = r.parentNode.parentNode.rowIndex;
-                document.getElementById("myTable").deleteRow(i);
+                document.getElementById("PeopleTable").deleteRow(i);
 
             });
 
         }
+
+
+
+    </script>
+<script>
+
+        function deleteAlert(id, r) {
+            $(document).ready(function () {
+                $(this).click(function () {
+                    $(this).load("delete_people.php?id="+id);
+                });
+                document.getElementById("alerts").innerHTML += "<div class=\"alert alert-danger alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + id + " successfully removed!</strong></div>";
+                var i = r.parentNode.parentNode.rowIndex;
+                document.getElementById("PeopleTable").deleteRow(i);
+
+            });
+
+        }
+
 
 
     </script>
@@ -198,8 +208,10 @@
     <script src="js/main.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    
 
-    <script src="../CS371-Project/add_people.js"></script>
+    <script src="add_people.js"></script>
+    
 
 </body>
 

@@ -63,27 +63,55 @@
                 <div class="col-md-7 col-md-push-1  probootstrap-animate" id="probootstrap-content">
                   <h2>Get In Touch</h2>
                   <p>Contact us using the form below.</p>
-                  <form action="#" method="post" class="probootstrap-form">
-                    <div class="form-group">
-                      <label for="name">Full Name</label>
-                      <input type="text" class="form-control" id="name" name="name">
-                    </div>
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" class="form-control" id="email" name="email">
-                    </div>
-                    <div class="form-group">
-                      <label for="subject">Subject</label>
-                      <input type="text" class="form-control" id="subject" name="subject">
-                    </div>
-                    <div class="form-group">
-                      <label for="message">Message</label>
-                      <textarea cols="30" rows="10" class="form-control" id="message" name="message"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <input type="submit" class="btn btn-primary btn-lg" id="submit" name="submit" value="Send Message">
-                    </div>
-                  </form>
+<form name="contactform" method="post" action="send_form_email.php">
+<table width="450px">
+<tr>
+ <td valign="top">
+  <label for="first_name">First Name *</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="first_name" maxlength="50" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top"">
+  <label for="last_name">Last Name *</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="last_name" maxlength="50" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="email">Email *</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="email" maxlength="80" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="telephone">Phone</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="telephone" maxlength="30" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="comments">Message *</label>
+ </td>
+ <td valign="top">
+  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+ </td>
+</tr>
+<tr>
+ <td colspan="2" style="text-align:center">
+  <input type="submit" value="Submit">   <a href="http://www.freecontactform.com/email_form.php">Email Form</a>
+ </td>
+</tr>
+</table>
+</form>
                 </div>
               </div>
             </div>

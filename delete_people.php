@@ -1,56 +1,19 @@
 <?php
+//getting the email of the user.
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
-/*
-
-DELETE.PHP
-
-Deletes a specific entry from the 'people' table
-
-*/
-
-
-
-// connect to the database
-
+//Setting up the database and deleting the user from the database.
 include 'include/dbconfig.php';
+$conn->query("SET NAMES utf8");
+$sql = "DELETE FROM committees WHERE id='$id'";
 
-
-
-// check if the 'id' variable is set in URL, and check that it is valid
-
-if (isset($_GET['id']) && is_numeric($_GET['id']))
-
-{
-
-// get id value
-
-$id = $_GET['id'];
-
-
-
-// delete the entry
-$sql = "DELETE FROM committees WHERE id=$id";
-
-$result = $conn->query($sql);
-
-
-
-// redirect back to the view page
-
-header("Location: people_table.php");
-
+if ($conn->query($sql) === TRUE) {
+    
+} else {
+    echo "Error deleting record: " . $conn->error;
 }
-
-else
-
-// if id isn't set, or isn't valid, redirect back to view page
-
-{
-
-header("Location: people_table.php");
-
+    
 }
-
-
-
 ?>
+      
