@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ACM Admin - add News</title>
+        <title>ACM Admin - Edit News</title>
         <meta name="description" content="Free Bootstrap Theme by ProBootstrap.com">
         <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -65,12 +65,15 @@
         echo '<br>';
         echo "<h3 id='newsTitle'>News:</h3>";
         echo "<button id='saveButton' class='btn btn-warning' onclick='addRowRequest()'>Save New</button>";
+        echo '<br>';
+        echo '<br>';
         echo"<span id='adding_error'></span>";
         echo '<div class="table-responsive">';
         echo "<table id='myTable' class='table table-striped table-bordered table-hover table-condensed table-responsive'>";
 
 //. "<th> <a href='signup.php' class='btn btn-primary'> Add </a> </th>"
 //MetaData
+   
         echo '<thead>';
         echo "<tr> "
         . "<th id='id'>id</th>"
@@ -82,7 +85,7 @@
         . "<th id='pic2'>pic2</th>"
         . "<th id='pic3'>pic3</th>"
         . "<th id='pic4'>pic4</th>"
-        . "<th><button id='addNews'class='btn btn-primary' onclick='createRow()'>Add News</button> </th>"
+        . "<th><button id=''class='btn btn-primary' onclick='createRow()'>Add News</button> </th>"
         . "</tr>"
         . "</thead>";
 
@@ -133,12 +136,12 @@
 //$email = $row[email];
 //$sql= "DELETE * FROM users WHERE $email=row[email]";
 //The ability to delete and modifiy each user.
-        $id = $row['id'];
+       $id = $row['title'];
         ?>
 
 
-        <td ><button onclick="deleteAlert('<?PHP echo $id; ?>', this)"  class="btn btn-danger">Delete New</button></td>
-
+        <td ><button onclick="deleteAlert('<?PHP echo $id; ?>', this)"  class="btn btn-danger">Delete News</button></td>
+        
         <?php
         echo "</tr>";
     }
@@ -189,14 +192,14 @@
 
     <script>
         function createRow() {
-        $('#addNews').attr('disabled', true);
+        $('#addUser').attr('disabled', true);
     
             
         var table = document.getElementById("myTable");
             var rowCount = table.rows.length;
             var row = table.insertRow(rowCount);
             row.innerHTML = "<td><input type='email' id='email' placeholder='Email'></input></td><td><input type='password' id='password' placeholder='password'></input></td><td><input type='text' id='firstname' placeholder='firstname'></input></td><td><input type='text' id='lastname' placeholder='lastname'></input></td><td><select class='form-control' id='role' name='role'><option disable> Select a role ...</option><option value='admin'> admin </option><option value='director'>director</option><option value='member'> member</option></select></td><td><input type='date' id='birthdate' ></input></td><td><input type='text' id='address' placeholder='address'></input></td><td><input type='text' id='mobile' placeholder='mobile'></input></td><td><input type='text' id='city' placeholder='city'></input></td><td><input type='text' id='country' placeholder='country'></input></td><td><input type='text' id='personalhomepage' placeholder='Personal homepage'></input></td>";
-            row.style.fontSize = "0.37em";
+            row.style.fontSize = "0.70em";
         }
 
     </script>
@@ -205,7 +208,7 @@
         function deleteAlert(id, r) {
             $(document).ready(function () {
                 $(this).click(function () {
-                    $(this).load("delete_row.php?id=" + id);
+                    $(this).load("delete_row.php?title=" + id);
                 });
 
                 document.getElementById("alerts").innerHTML += "<div class=\"alert alert-danger alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + id + " successfully removed!</strong></div>";
@@ -226,6 +229,17 @@
     <script> $(document).ready(function () {
                 $("#myTable").css('font-size','0.6em');
                 
+                $("#id").css('width','0.1em');
+                $("#title").css('width','10%');
+                $("#short_desc").css('width','17%');
+                $("#long_desc").css('width','40%');
+                $("#date").css('width','5%');
+                $("#pic1").css('width','5%');
+                $("#pic2").css('width','5%');
+                $("#pic3").css('width','5%');
+                $("#pic4").css('width','5%');
+                $("#addUser").css('width','5%');
+       
                 
             });
             </script>

@@ -51,7 +51,7 @@
         <div class="container">
 
 
-          <h class='topic'>PSU-ACM OFFICERS</h>
+          <h2 class='topic'>PSU-ACM OFFICERS</h2>
           <div class="row">
 
 <?php
@@ -67,8 +67,17 @@
                 <div class="text">
                   <h3 id="name"><?php echo $row['name'];?></h3>
                   <p><?php echo $row['position'];?></p>
-                  <p <?php echo $row['email'];?>>
+                               <p id="info<?php echo $row['id'];?>">
                   </p>
+                  
+ 	<button class="b" style="color:#1E90FF" title="<?php echo $row['email'];?>" onclick="displayEmail(title,<?php echo $row['id'];?>)">
+                    		<i class="icon-email">	
+                    		</i>
+                    	</button>
+                     	<button class="b" style="color:#CD5C5C;" title="<?php echo $row['id'];?>" onclick="displayPhone(title,<?php echo $row['id'];?>)">
+                    		<i class="glyphicon glyphicon-barcode">
+                    		</i>
+                    	</button>
                 </div>
               </div>
             </div>
@@ -98,16 +107,16 @@ if($count%4==0){
 
             <?php
             $conn->query("SET NAMES utf8");
-            $sql = ("SELECT * FROM committees");
+            $sql = ("SELECT * FROM `committees` WHERE position LIKE '%Committee%' ORDER BY position");
             $result = $conn->query($sql);
             $count = 0;
 
 
              ?>
-             <h>PSU-ACM Committees</h>
+            
 
         <div class="container">
-
+ <h2 class='topic'>PSU-ACM Committees' Members</h2>
 
           <div class="row">
 
@@ -124,8 +133,17 @@ if($count%4==0){
                 <div class="text">
                   <h3 id="name"><?php echo $row['name'];?></h3>
                   <p><?php echo $row['position'];?></p>
-                  <p><?php echo $row['id'];?></p>
-                  <p <?php echo $row['email'];?>></p>
+                   <p id="info<?php echo $row['id'];?>">
+                  </p>
+                  
+ 	<button class="b" style="color:#1E90FF" title="<?php echo $row['email'];?>" onclick="displayEmail(title,<?php echo $row['id'];?>)">
+                    		<i class="icon-email">	
+                    		</i>
+                    	</button>
+                     	<button class="b" style="color:#CD5C5C;" title="<?php echo $row['id'];?>" onclick="displayPhone(title,<?php echo $row['id'];?>)">
+                    		<i class="glyphicon glyphicon-barcode">
+                    		</i>
+                    	</button>
 
                 </div>
               </div>
@@ -162,7 +180,7 @@ if($count%4==0){
     </div>
     <!-- END wrapper -->
 
-  <!--  <script>
+ <script>
       var checkEmail = [];
       var checkName = [];
       var checkPhone = [];
@@ -201,7 +219,7 @@ if($count%4==0){
       checkPhone[id] = 0;
       document.getElementById("info"+id+"").innerHTML = "";
     }
-  }-->
+  }
     </script>
     <script src="js/scripts.min.js"></script>
     <script src="js/main.min.js"></script>

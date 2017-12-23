@@ -56,12 +56,14 @@
         echo "<div id='alerts'>";
         echo "</div>";
         echo "</div>";
-        echo "<div class='container'>";
-        echo "<div class='row'>";
+        echo "<div class='container-fluid'>";
+        echo "<div class='row-fluid'>";
         echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>";
         echo '<br>';
-        echo "<h3 style='text-align:center'>Registered Users:</h3>";
-        echo "<button id='saveButton' class='btn btn-warning' onclick='addRowRequest()'>Save user</button>";
+        echo "<h2 style='text-align:center'>Registered Users:</h2>";
+        echo "<button id='saveButton' class='btn btn-warning' onclick='addRowRequest()'>Save User</button>";
+        echo '<br>';
+        echo '<br>';
         echo"<span id='adding_error'></span>";
         echo '<div class="table-responsive">';
         echo "<table id='myTable' class='table table-striped table-bordered table-hover table-condensed table-responsive'>";
@@ -80,7 +82,7 @@
         . "<th>Mobile</th>"
         . "<th>City</th>"
         . "<th>Country</th>"
-        . "<th>Personal Home Page</th>"
+        . "<th>Personal Page</th>"
         . "<th><button id='addUser'class='btn btn-primary' onclick='createRow()'>Add User</button> </th>"
         . "</tr>"
         . "</thead>";
@@ -185,7 +187,7 @@
                     $(editableObj).css("background", "#EFF0F4");
                     $(editableObj).css("border", "3px solid lightgreen");
                     
-                document.getElementById("alerts").innerHTML += "<div class=\"alert alert-info alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + column + " of "+ email+" successfully modified!</strong></div>";
+                document.getElementById("alerts").innerHTML = "<div class=\"alert alert-info alert-dismissable\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a><strong>" + column + " of "+ email+" successfully modified!</strong></div>";
                
                 }
             });
@@ -201,10 +203,10 @@
             var rowCount = table.rows.length;
             var row = table.insertRow(rowCount);
             row.innerHTML = "<td><input type='email' id='email' placeholder='Email'></input></td><td><input type='password' id='password' placeholder='password'></input></td><td><input type='text' id='firstname' placeholder='firstname'></input></td><td><input type='text' id='lastname' placeholder='lastname'></input></td><td><select class='form-control' id='role' name='role'><option disable> Select a role ...</option><option value='admin'> admin </option><option value='director'>director</option><option value='member'> member</option></select></td><td><input type='date' id='birthdate' ></input></td><td><input type='text' id='address' placeholder='address'></input></td><td><input type='text' id='mobile' placeholder='mobile'></input></td><td><select value='city' class='selectpicker' name='city' id='city'><option value='None'>City</option> <option value='Riyadh'>Riyadh</option>  <option value='Jeddah'>Jeddah</option><option value='Dammam'>Dammam</option><option value='Yanbu'>Yanbu</option></select></td><td><select value='country' class='selectpicker' name='country' id='country'> <option value='None'>Country</option> <option value='Saudi Arabia'>Saudi Arabia</option><option value='Jordan'>Jordan</option><option value='Yamen'>Yamen</option></select></td><td><input type='text' id='personalhomepage' placeholder='Personal homepage'></input></td>";
-            row.style.fontSize = "0.58em";
+            row.style.fontSize = "0.9em";
             
         }
-                $("#myTable").css('font-size','0.7em');
+                $("#myTable").css('font-size','0.8em');
 
     </script>
     <script>

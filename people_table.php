@@ -50,8 +50,8 @@
         echo "<div id='alerts'>";
         echo "</div>";
         echo "</div>";
-        echo "<div class='container'>";
-        echo "<div class='row'>";
+         echo "<div class='container-fluid'>";
+        echo "<div class='row-fluid'>";
         echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>";
         echo '<br>';
         echo "<h3 style='text-align:center'>PSU-ACM Members:</h3>";
@@ -110,7 +110,7 @@
 
 
         <?php
-        echo '<td><a href="delete_people.php?id=' . $row['id'] . '">Delete</a></td>';
+        echo '<td><button class="btn btn-danger"><a href="delete_people.php?id=' . $row['id'] . '"></a>Delete</button></td>';
         echo "</tr>";
     }
 

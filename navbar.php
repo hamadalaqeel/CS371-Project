@@ -125,26 +125,30 @@
                         <li id="conferences">   <a  href="conferences.php"> Conferences</a>        </li>
                         <li id="people">        <a  href="people.php">      People     </a>        </li>
                         <li id="contact">          <a  href="Contact.php">     Contact us</a>        </li>
+
                         <?php
                         if (isset($_SESSION["email"])) {
 
                             $role = $_SESSION["role"];
                            if ($role == "admin") {
-                                echo "<li id=\"users\">  <a  href=\"users.php\">   Users</a>   </li>";
-                                echo "<li id=\"edit_news\" >  <a  href=\"add_news.php\">  Edit news</a>   </li>";
-                                echo "<li id=\"edit_news\" >  <a  href=\"add_news.php\">  Edit ACM Members</a>   </li>";
-                                echo "<li id=\"edit_news\" >  <a  href=\"add_news.php\">  Edit Confrences</a>   </li>";
+                                echo '<li > <a> <font color="red">EDIT:</font></a></li > ';
+                                echo '<li id=\"users\">  <a  href="users.php">   <font color="red">USERS</font></a>   </li>';
+                                echo '<li id=\"edit_news\" >  <a  href="edit_news.php"> <font color="red">NEWS</font></a>   </li>';
+                                echo '<li id=\"people_table\" >  <a  href="people_table.php">  <font color="red">PEOPLE</font></a>   </li>';
+                                echo '<li id=\"edit_news\" >  <a  href=\"add_news.php\">  <font color="red">CONFERENCES</font></a>   </li>';
                             }else if ($role == "director"){
-                              echo "<li id=\"edit_news\" >  <a  href=\"add_news.php\">  Edit news</a>   </li>";
-                              echo "<li id=\"edit_news\" >  <a  href=\"add_news.php\">  Edit Conferences</a>   </li>";
+                                echo' <li >  <font color="#0099cc">EDIT:</font></li > ';
+                                echo '<li id=\"edit_news\" >  <a  href=\"add_news.php\"> <font color="red">NEWS</font></a>   </li>';
+                                echo '<li id=\"edit_news\" >  <a  href=\"add_news.php\">  <font color="red">CONFERENCES</font></a>   </li>';
                             }
                         }
                         ?>
                     </ul>
-                    <!-- NAVBAR LOGNI  AND SIGN UP Section-->
+                    <!-- NAVBAR LOGIN  AND SIGN UP Section-->
                     <ul class="nav navbar-nav navbar-right">
 <?php
 if (isset($_SESSION["email"])) {
+    
     echo '<li id="WelcomeMessage"><span>Welcome <b id="Wm"><u>' . $_SESSION["firstname"] . '.</b></u></span></li>';
     echo '<li id="ButtSO"><a href="logout.php"><button id="ButtonSO" type="button" class="btn btn-success" href="logout.php">Sign out</button></a></li>';
 } else {
@@ -173,7 +177,7 @@ if (isset($_SESSION["email"])) {
     echo "                                  </div>\n";
     echo "                                  <div class=\"checkbox\">\n";
     echo "                                      <label>\n";
-    echo "                                          <input type=\"checkbox\"> keep me logged-in\n";
+    echo "                                          <input type=\"checkbox\"> Remember Me\n";
     echo "                                      </label>\n";
     echo "                                  </div>\n";
     echo "                              </form>\n";
