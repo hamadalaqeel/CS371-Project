@@ -19,6 +19,48 @@
           <script src="js/vendor/html5shiv.min.js"></script>
           <script src="js/vendor/respond.min.js"></script>
         <![endif]-->
+        <style>
+               .dropbtn {
+    background-color: #0099cc;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+        </style>
     </head>
     <body>
         <?php
@@ -125,21 +167,35 @@
                         <li id="conferences">   <a  href="conferences.php"> Conferences</a>        </li>
                         <li id="people">        <a  href="people.php">      People     </a>        </li>
                         <li id="contact">          <a  href="Contact.php">     Contact Us</a>        </li>
-
+                 
                         <?php
                         if (isset($_SESSION["email"])) {
 
                             $role = $_SESSION["role"];
                            if ($role == "admin") {
-                                echo '<li > <a> <font color="red">EDIT:</font></a></li > ';
+                               echo '  <div class="dropdown">
+                  <button class="dropbtn">Edit</button>
+                 <div class="dropdown-content">
+                    <a id="users" href="users.php">Users</a>
+                    <a  id="edit_news" href="edit_news.php">News</a>
+                    <a id="edit_people" href="edit_people.php">People</a>
+                    <a id="edit_conferences" href="edit_conferences">Conferences</a>
+                    
+                    </div>
+                    </div>';
+                               /* echo '<li > <a> <font color="red">EDIT:</font></a></li > ';
                                 echo '<li id="users">  <a  href="users.php">   <font color="red">USERS</font></a>   </li>';
                                 echo '<li id="edit_news" >  <a  href="edit_news.php"> <font color="red">NEWS</font></a>   </li>';
                                 echo '<li id="edit_people" >  <a  href="edit_people.php">  <font color="red">PEOPLE</font></a>   </li>';
-                                echo '<li id="edit_news" >  <a  href=\"add_news.php\">  <font color="red">CONFERENCES</font></a>   </li>';
+                                echo '<li id="edit_news" >  <a  href=\"add_news.php\">  <font color="red">CONFERENCES</font></a>   </li>';*/
                             }else if ($role == "director"){
-                                echo' <li >  <font color="#0099cc">EDIT:</font></li > ';
-                                echo '<li id=\"edit_news\" >  <a  href=\"add_news.php\"> <font color="red">NEWS</font></a>   </li>';
-                                echo '<li id=\"edit_news\" >  <a  href=\"add_news.php\">  <font color="red">CONFERENCES</font></a>   </li>';
+                                                            echo '  <div class="dropdown">
+                  <button class="dropbtn">Edit</button>
+                 <div class="dropdown-content">
+                    <a  id="edit_news" href="edit_news.php">News</a>
+                    <a id="edit_conferences" href="edit_conferences">Conferences</a>
+                    </div>
+                    </div>';
                             }
                         }
                         ?>
