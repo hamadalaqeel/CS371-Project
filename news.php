@@ -24,7 +24,10 @@
       <!-- The NAVBAR -->
       <?php
       include 'navbar.php';
+      
       ?>
+
+     
      <script>
       //MAKING THE CURRENT PAGE ELEMENT ACTIVE IN THE NAVBAR
       document.getElementById("news").classList.add("active");
@@ -126,9 +129,10 @@
       </section>
   
       <!-- THE FOOTER -->
-      <?php
-      include 'footer.php';
-      ?>
+<?php
+    include 'footer.php';
+    ?>
+     
       <!-- THE END OF THE FOOTER -->
 
     <!-- END wrapper -->
@@ -141,4 +145,4 @@
 
     
   </body>
-</html>
+</html>	

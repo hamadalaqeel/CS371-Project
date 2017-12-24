@@ -16,17 +16,20 @@ if (isset($_POST['email'])) {
 
     $row = $result->num_rows;
 
+ $response_code = -1;
 
     if ($row == 1) {
+ $response_code = 1;
         echo '<type> ' . $email . ' </type>';
         echo '<message>* ' . $email . ' is registered in our database, please change the email </message>';
-        echo '<code>1</code>';
+         echo '<code>' . $response_code . '</code>';
     } else {
+ $response_code = 0;
         echo '<type> UserName </type>';
         echo '<message>*' . $email . ' is available </message>';
-        echo '<code>2</code>';
+       echo '<code>' . $response_code . '</code>';
     }
 
     echo ('</response>');
 }
-?>
+?>		

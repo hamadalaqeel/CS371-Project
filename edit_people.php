@@ -20,9 +20,14 @@
 
     </head>
     <body>
+
+
         <?php
         //The NAVBAR
         include 'navbar.php';
+$role = $_SESSION["role"];
+      if($role == "admin"){
+
 
         //   $column ='email';
         //    $email ='mmm@mmm.com';
@@ -94,11 +99,11 @@
             </script>
 
 
-        <td><input  contenteditable="true"  onClick="showEdit(this);" style=";width: 90px;" type="text" onBlur="saveToDatabase(this, 'id', '<?php echo $row["email"]; ?>')" value="<?php echo $row["id"]; ?>"></td>
-        <td contenteditable="true" ><input style=";width: 250px;" type="text" onBlur="saveToDatabase(this, 'email', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["email"]; ?>"></td>
-        <td contenteditable="true" ><input style=";width: 250px;" type="text" onBlur="saveToDatabase(this, 'name', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["name"]; ?>"></td>
-        <td contenteditable="true" ><input style=";width: 220px;" type="text" onBlur="saveToDatabase(this, 'position', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["position"]; ?>"></td>
-        <td contenteditable="true" ><input style=";width: 300px;" type="file" onBlur="saveToDatabase(this, 'image', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["image"]; ?>"></td>
+        <td><input  contenteditable="true"  onClick="showEdit(this);" style=";width: 40px;" type="number" onBlur="saveToDatabase(this, 'id', '<?php echo $row["email"]; ?>')" value="<?php echo $row["id"]; ?>"></td>
+        <td contenteditable="true" ><input style=";width: 230px;" type="text" onBlur="saveToDatabase(this, 'email', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["email"]; ?>"></td>
+        <td contenteditable="true" ><input style=";width: 230px;" type="text" onBlur="saveToDatabase(this, 'name', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["name"]; ?>"></td>
+        <td contenteditable="true" ><input style=";width: 210px;" type="text" onBlur="saveToDatabase(this, 'position', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["position"]; ?>"></td>
+        <td contenteditable="true" ><input style=";width: 220px;" type="file" onBlur="saveToDatabase(this, 'image', '<?php echo $row["email"]; ?>')" onClick="showEdit(this);" value="<?php echo $row["image"]; ?>"></td>
 
 
 
@@ -118,8 +123,11 @@
     echo "</div>";
     echo "</div>";
     ?>
-    <!-- THE FOOTER -->
+        <!-- THE FOOTER -->
     <?php
+        }else{?><script>alert("You must be an admin to visit this page!");window.location.href = "http://www.mugren.sa.tn";</script>    <?php
+}
+
     include 'footer.php';
     ?>
     <!-- THE END OF THE FOOTER -->
@@ -208,8 +216,7 @@
     <script src="js/main.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    
-
+  
     <script src="add_people.js"></script>
     
 

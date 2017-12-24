@@ -24,6 +24,9 @@
         //The NAVBAR 
         include 'navbar.php';
 
+      $role = $_SESSION["role"];
+        if( $role == "admin"){
+
         //   $column ='email';
         //    $email ='mmm@mmm.com';
         //     $editval ='newemail.com';        
@@ -32,8 +35,6 @@
         $sql = "SELECT * FROM users";
 
         $result = $conn->query($sql);
-
-
 
 
 // Display data in table.
@@ -51,6 +52,7 @@
          * 10- City 
          * 11- Personal home page
          */
+
 
         echo "<div class='container-fliud'>";
         echo "<div id='alerts'>";
@@ -157,12 +159,17 @@
     echo "</div>";
     echo "</div>";
     echo "</div>";
+
+
     ?>
 
 
 
     <!-- THE FOOTER -->
     <?php
+        }else{?><script>alert("You must be an admin to visit this page!");window.location.href = "http://www.mugren.sa.tn";</script>    <?php
+}
+
     include 'footer.php';
     ?>
     <!-- THE END OF THE FOOTER -->
@@ -233,7 +240,7 @@
     <script src="js/custom.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 
-    <script src="../CS371-Project/add_user.js"></script>
+    <script src="add_user.js"></script>
 
 </body>
 

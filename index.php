@@ -2,16 +2,16 @@
 
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+ <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ACL Chapter - Home</title>
+    <title>ACM - Home</title>
     <meta name="description" content="Free Bootstrap Theme by ProBootstrap.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
     
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/styles-merged.css">
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="CSS1/custom.css">
+
 
 
     <!--[if lt IE 9]>
@@ -30,7 +30,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate">
-              <h1>About Prince Sultan University</h1>
+              <h1>About Prince Sultan University </h1>
             </div>
           </div>
         </div>
@@ -163,8 +163,10 @@
 ?>
     
 
-    <script src="../CS371-Project/js/scripts.min.js"></script>
-    <script src="../CS371-Project/js/main.min.js"></script>
-    <script src="../CS371-Project/js/custom.js"></script>
+
+    <script src="js/scripts.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script src="js/custom.js"></script>
+
   </body>
 </html>

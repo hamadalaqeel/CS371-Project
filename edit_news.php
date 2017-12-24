@@ -1,4 +1,3 @@
-
 <html>
     <head>
 <!DOCTYPE html>
@@ -23,10 +22,12 @@
 
     </head>
     <body>
-        <?php
-        //The NAVBAR 
-        include 'navbar.php';
+  <?php
+      include 'navbar.php';
+      $role = $_SESSION["role"];
+        if( $role == "admin" || $role == "director"){
 
+ 
         //   $column ='email';
         //    $email ='mmm@mmm.com';
         //     $editval ='newemail.com';        
@@ -147,9 +148,14 @@
 
 
     <!-- THE FOOTER -->
-    <?php
+ 
+<?php
+        }else{?><script>alert("You must be an admin to visit this page!");window.location.href = "http://mugren.sa.tn";</script>    <?php
+}
+
     include 'footer.php';
     ?>
+   
     <!-- THE END OF THE FOOTER -->
 
     <!-- END wrapper -->

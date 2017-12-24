@@ -27,8 +27,8 @@ echo ('<response>');
 echo '<code>' . $response_code . '</code>';
 echo '<id>' . $id . '</id>';
 echo '<email>' . $email . '</email>';
-echo '<name>' . $lastname . '</name>';
-echo '<position>' . $role . '</position>';
-echo '<image>' . $birthdate . '</image>';
+echo '<name>' . $name . '</name>';
+echo '<position>' . $position . '</position>';
+echo '<image>' . $image . '</image>';
 echo ('</response>');
 ?>

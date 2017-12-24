@@ -32,7 +32,7 @@ function addRowRequest() {
     
     
 
-    if (id !== '' && email !== '' && name !== '' && position !== '' && image !== '') {
+    if (id !== ''  && email !== '' && name !== '' && position !== '' && image !== '') {
 
         //if the server is not busy and is ready to communicate
         if ((xmlHttp.readyState == 0) || (xmlHttp.readyState == 4)) {
@@ -69,6 +69,8 @@ function AddRowResponseCallback() {
             var email = xmlResponse.getElementById("email")[0].childNodes[0].nodeValue;
             var name = xmlResponse.getElementById("firstname")[0].childNodes[0].nodeValue;
             var position = xmlResponse.getElementById("lastname")[0].childNodes[0].nodeValue;
+            var image = xmlResponse.getElementById("image")[0].childNodes[0].nodeValue;
+
           
 
             if (code == '1') {

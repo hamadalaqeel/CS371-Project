@@ -38,7 +38,6 @@
                 <h3>Links</h3>
                 <ul>
                   <li><a href="index.php">Home</a></li>
-                  <li><a href="conferences.php">Conferences</a></li>
                   <li><a href="people.php">People</a></li>
                   <li><a href="news.php">News</a></li>
                   <li><a href="contact.php">Contact</a></li>

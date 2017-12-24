@@ -9,58 +9,17 @@
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
-        <link rel="stylesheet" href="../CS371-Project/css/styles-merged.css">
-        <link rel="stylesheet" href="../CS371-Project/css/style.min.css">
-        <link type="text/css" rel="stylesheet" href="../CS371-Project/custom.css">
+        <link rel="stylesheet" href="css/styles-merged.css">
+        <link rel="stylesheet" href="css/style.min.css">
+        <link type="text/css" rel="stylesheet" href="custom.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+  
 
         <!--[if lt IE 9]>
           <script src="js/vendor/html5shiv.min.js"></script>
           <script src="js/vendor/respond.min.js"></script>
         <![endif]-->
-        <style>
-               .dropbtn {
-    background-color: #0099cc;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: red;
-}
-
-        </style>
     </head>
     <body>
         <?php
@@ -68,9 +27,7 @@
         session_start();
         ?>
 
-
-
-        <div class="probootstrap-search" id="probootstrap-search">
+         <div class="probootstrap-search" id="probootstrap-search">
             <a href="#" class="probootstrap-close js-probootstrap-close"><i class="icon-cross"></i></a>
             <form action="#">
                 <input type="search" name="s" id="search" placeholder="Search a keyword and hit enter...">
@@ -100,6 +57,9 @@
                         </ul>
                     </div>
 
+
+
+                <!-- LOGOS -->
                 </div>
 
                 <!-- LOGOS -->
@@ -108,7 +68,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <a  href="index.php" > 
                             <img id="logoPicLeft" alt="ACL Chapter Logo" src="img/ACMChapterLogo.png" > 
-                            <img id="logoPic2"alt="ACL Chapter Logo" src="img/PSUlogo2.png">
+                            <img id="logoPic2"alt="ACM Chapter Logo" src="img/PSULogo2.png">
                             <img id="logoPicRight" alt="ACL Chapter Logo" src="img/ACMChapterLogo.png" > </a>
                     </div>
 
@@ -116,7 +76,9 @@
 
             </div>
         </div>
-
+        
+        </div>
+</div>
         <?php
         if (isset($_SESSION["email"])) {
             
@@ -141,7 +103,7 @@
                 $_SESSION["lastname"] = $row["last_name"];
                 $_SESSION["role"] = $row["role"];
             } else {
-                echo "<script type='text/javascript' src='../CS371-Project/js/loginValidation.js'></script>";
+                echo "<script type='text/javascript' src='js/loginValidation.js'></script>";
             }
         }
         ?>
@@ -166,7 +128,7 @@
                         <li id="news"  >        <a href="news.php">        News       </a>        </li>
                 <!--        <li id="conferences">   <a  href="conferences.php"> Conferences</a>        </li>-->
                         <li id="people">        <a  href="people.php">      People     </a>        </li>
-                        <li id="contact">          <a  href="Contact.php">     Contact Us</a>        </li>
+                        <li id="contact">          <a  href="contact.php">     Contact Us</a>        </li>
                  
                         <?php
                         if (isset($_SESSION["email"])) {
@@ -192,7 +154,6 @@
                   <button class="dropbtn">Edit</button>
                  <div class="dropdown-content">
                     <a  id="edit_news" href="edit_news.php">News</a>
-                    <a id="edit_conferences" href="edit_conferences">Conferences</a>
                     </div>
                     </div>';
                             }
@@ -203,8 +164,7 @@
                     <ul class="nav navbar-nav navbar-right">
 <?php
 if (isset($_SESSION["email"])) {
-    
-    echo '<li id="WelcomeMessage"><span>Welcome <b id="Wm"><u>' . $_SESSION["firstname"] . '.</b></u></span></li>';
+    echo '<li id="WelcomeMessage" style="margin:0;"><span >Welcome <b id="Wm"><u>' . $_SESSION["firstname"] . '</b></u>.</span></li>';
     echo '<li id="ButtSO"><a href="logout.php"><button id="ButtonSO" type="button" class="btn btn-success" href="logout.php">Sign out</button></a></li>';
 } else {
     echo "  <li><a href=\"signup.php\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\n";

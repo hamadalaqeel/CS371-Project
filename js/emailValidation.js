@@ -25,7 +25,7 @@ function getXMLHTTPRequest() {
 //sending the request to the server
 function getEmailresult() {
     var email = document.getElementById("email").value;
-
+if(email != ""){
     //if the server is not busy and is ready to communicate
     if ((xmlHttp.readyState === 0) || (xmlHttp.readyState === 4)) {
         xmlHttp.open("POST","loginValidation.php", true);
@@ -34,6 +34,7 @@ function getEmailresult() {
         xmlHttp.send("email="+email);
     }
 }
+else{}
 
 function EmailresultCallback() {
     //request finished and response is ready

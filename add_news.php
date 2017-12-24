@@ -52,7 +52,7 @@
                                 
                             </div>
                             <div class="form-group">
-                             <textarea rows="6" cols="140" name="long_desc" form="ADD_NEWS" placeholder="Long Description"></textarea>
+                             <textarea style="width:100%;" rows="6" cols="139" name="long_desc" form="ADD_NEWS" placeholder="Long Description"></textarea>
                             </div>
                            
                             <div id="date" class="form-group-sm" >
@@ -106,6 +106,8 @@
             ?>
                
  <script type='text/javascript'>alert("News Posted Succesfully!");
+                window.history.go(-2);
+
 </script>
 
         <?php
