@@ -1,15 +1,26 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 $(document).ready(function () {
     $flag = 1;
+    function validateEmail($email) {
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        return emailReg.test( $email );
+      }
+
+
     $("#email").focusout(function () {
         if ($(this).val() === '') {
             $(this).css("border-color", "#FF0000");
             $('#submit').attr('disabled', true);
-            $("#error_email").text("* You have to enter your email!");
+            $("#error_email").css("color", "red");
+              if( !validateEmail($(this).val())) {
+                   $("#error_email").text("* You have to enter a real email!");
+                }else{
+
+                    $("#error_email").text("* You have to enter your email!");}
         } else
         {
             $(this).css("border-color", "#2eb82e");
@@ -17,10 +28,10 @@ $(document).ready(function () {
             $("#error_email").text("");
 
         }
-    
+
     }
       );
-      
+
      $("#password").focusout(function () {
         if ($(this).val() === '') {
             $(this).css("border-color", "#FF0000");
@@ -160,6 +171,5 @@ $(document).ready(function () {
             $("#error_phone").text("* You have to enter your Phone Number!");
         }
     });
-    
-});
 
+});
